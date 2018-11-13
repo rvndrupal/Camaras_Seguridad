@@ -1,4 +1,9 @@
-$(".titulo").attr("contentEditable", true);
+if ($(".btn-editar").length > 0) {
+    $(".titulo").attr("contentEditable", true);
+} //si se puede editar
+
+
+
 //$(".footer").attr("contentEditable", true);
 
 $(".btn-editar").on('click', function() {
