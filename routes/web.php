@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front.home');
-});
+// Route::get('/', function () {
+//     return view('front.home');
+// });
+
+Route::get('/', 'MasterController@master')->name('master.index');
+//->middleware('permission:masters.index');
 
 //panel de administración
 Route::get('/admin', function () {
@@ -112,5 +115,14 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')
     ->middleware('permission:users.edit');
+
+
+    //master edición de los campos   
+
+ 
+
+    Route::post('editar_master', 'MasterController@update')->name('editar_master')
+    ->middleware('permission:masters.edit');
+
 
 });

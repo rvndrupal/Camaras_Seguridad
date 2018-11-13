@@ -94,6 +94,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact</a>
                         </li>
+                        @can('masters.index')
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin') }}">Panel de Control</a>
+                        </li>
+                        @endcan
                     </ul>
                 </div>
             </nav>
@@ -115,7 +120,13 @@
     <section class="fplus-hero-area" style="background-image: url({{ asset('front/img/bg-img/hero-1.jpg') }});" id="home">
         <div class="hero-content-area d-flex justify-content-end">
             <div class="hero-text">
-                <h2>For More Agency</h2>
+                @foreach ($masters as $master )
+                <h2 class="titulo">{{ $master->titulo }}</h2>
+                 @endforeach  
+                @can('masters.update')                        
+                <button type="button" class="btn btn-primary btn-editar">Actualizar</button>
+                 @endcan  
+                {{ csrf_field() }}
                 <a href="#projects" class="view-portfolio-btn" id="scrollDown"><i class="fa fa-plus" aria-hidden="true"></i> View Portfolio</a>
             </div>
         </div>
@@ -627,4 +638,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ asset('front/js/google-map/map-active.js') }}"></script>
     <!-- Active JS -->
     <script src="{{ asset('front/js/active.js') }}"></script>
+
+    <script src="{{ asset('front/js/master.js') }}"></script>
 </body>
