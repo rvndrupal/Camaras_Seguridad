@@ -15,8 +15,8 @@
 //     return view('front.home');
 // });
 
-Route::get('/', 'MasterController@master')->name('master.index');
-//->middleware('permission:masters.index');
+ Route::get('/', 'MasterController@master')->name('master.index');
+// //->middleware('permission:masters.index');
 
 //panel de administración
 Route::get('/admin', function () {
@@ -118,31 +118,38 @@ Route::middleware(['auth'])->group(function(){
 
 
     //master edición de los campos   
-
-    Route::post('masters/store', 'MasterController@store')->name('masters.store')
-    ->middleware('permission:masters.create');
-
-    Route::get('masters', 'MasterController@index')->name('masters.index')
-    ->middleware('permission:masters.index');
-
-    Route::get('masters/create' , 'MasterController@create')->name('masters.create')
-    ->middleware('permission:masters.create');
-
-    // Route::put('masters/{master}', 'MasterController@updatees')->name('masters.update')
-    // ->middleware('permission:masters.edit');
-
-    Route::get('masters/{master}', 'MasterController@show')->name('masters.show')
-    ->middleware('permission:masters.show');
-
-    Route::delete('masters/{master}', 'MasterController@destroy')->name('masters.destroy')
-    ->middleware('permission:masters.destroy');
-
-    Route::get('masters/{master}/edit', 'MasterController@edit')->name('masters.edit')
-    ->middleware('permission:masters.edit');
- 
-
     Route::post('editar_master', 'MasterController@update')->name('editar_master')
     ->middleware('permission:masters.edit');
+
+  
+
+    //master edición de los campos  
+
+
+
+
+    //Sección uno  
+     Route::post('seccion_unos/store', 'SeccionUnoController@store')->name('seccion_unos.store')
+     ->middleware('permission:seccion_unos.create');
+ 
+     Route::get('seccion_unos', 'SeccionUnoController@index')->name('seccion_unos.index')
+     ->middleware('permission:seccion_unos.index');
+
+ 
+     Route::get('seccion_unos/create' , 'SeccionUnoController@create')->name('seccion_unos.create')
+     ->middleware('permission:seccion_unos.create');
+ 
+     Route::put('seccion_unos/{seccionUno}', 'SeccionUnoController@update')->name('seccion_unos.update')
+     ->middleware('permission:seccion_unos.edit');
+ 
+     Route::get('seccion_unos/{seccionUno}', 'SeccionUnoController@show')->name('seccion_unos.show')
+     ->middleware('permission:seccion_unos.show');
+ 
+     Route::delete('seccion_unos/{seccionUno}', 'SeccionUnoController@destroy')->name('seccion_unos.destroy')
+     ->middleware('permission:seccion_unos.destroy');
+ 
+     Route::get('seccion_unos/{seccionUno}/edit', 'SeccionUnoController@edit')->name('seccion_unos.edit')
+     ->middleware('permission:seccion_unos.edit');
 
 
 });

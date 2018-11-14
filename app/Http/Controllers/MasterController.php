@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 
 use App\Master;
+use App\seccionUno;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -17,10 +18,10 @@ class MasterController extends Controller
     public function master(){
         $masters=Master::orderBy('id','DESC')->take(1)->get();
         //dd($masters);
+        $secciones=seccionUno::orderBy('id','DESC')->take(1)->get();
 
-        return view('front.home', compact('masters')); 
+        return view('front.home', compact('masters','secciones')); 
     }
-
 
     public function index()
     { 
@@ -47,13 +48,6 @@ class MasterController extends Controller
     public function store(Request $request)
     {
         $master=Master::create($request->all());
-
-        // if($request->file('banner')){ //si se manda el archivo
-        //     $path=Storage::disk('public')->put('image', $request->file('banner'));
-        //     //utiliza la funcion de guardar en public crea la carpeta image y pasa el archivo
-        //     $master->fill(['banner' => asset($path)])->save(); //actualizame la ruta en el post
-        //     //el asset toma toda la ruta y se genera correctamente toda la ruta
-        // }
         
         return redirect()->route('masters.index')
         ->with('info','Dato guardado con exito');

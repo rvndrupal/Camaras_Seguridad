@@ -126,39 +126,51 @@ class PermissionsTableSeeder extends Seeder
         //permisos para editables.
 
         Permission::create([
-            'name' => 'Navegar Master',
-            'slug' => 'masters.index',
-            'description'  => 'Lista y navega todos los Masters del sistema',
-
-        ]);
-
-        Permission::create([
-            'name' => 'Ver detalle de masters',
-            'slug' => 'masters.show',
-            'description'  => 'Ver en detalle cada master del sistema',
-
-        ]);
-
-        Permission::create([
-            'name' => 'Crea un nuevo Master',
-            'slug' => 'masters.create',
-            'description'  => 'Crear un nuevo Master del sistema',
-
-        ]);
-
-        Permission::create([
             'name' => 'Edicion de masters',
             'slug' => 'masters.edit',
             'description'  => 'Editar cualquier dato de un Master del sistema',
 
         ]);
+        //edición de textos
 
+        //Sección uno
         Permission::create([
-            'name' => 'Eliminar Master',
-            'slug' => 'masters.destroy',
-            'description'  => 'Eliminar cualquier dato de un Master del sistema',
+            'name' => 'Navegar Seeciónuno',
+            'slug' => 'seccion_unos.index',
+            'description'  => 'Lista y navega todos los products del sistema',
 
         ]);
+
+        Permission::create([
+            'name' => 'Ver detalle de Sección uno',
+            'slug' => 'seccion_unos.show',
+            'description'  => 'Ver en detalle cada producto del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Crea un nuevo Sección uno',
+            'slug' => 'seccion_unos.create',
+            'description'  => 'Crear un nuevo producto del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Edicion de Sección uno',
+            'slug' => 'seccion_unos.edit',
+            'description'  => 'Editar cualquier dato de un Sección uno del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Eliminar Sección uno',
+            'slug' => 'seccion_unos.destroy',
+            'description'  => 'Eliminar cualquier dato de un Sección uno del sistema',
+
+        ]);
+        //Sección uno
+
+       
         
     }
 }

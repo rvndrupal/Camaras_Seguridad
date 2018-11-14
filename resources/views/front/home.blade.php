@@ -27,6 +27,8 @@
     <link href="{{ asset('front/css/others/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/others/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/others/pe-icon-7-stroke.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    
 
     <!-- Responsive CSS -->
     <link href="{{ asset('front/css/responsive/responsive.css') }}" rel="stylesheet">
@@ -117,9 +119,10 @@
     <!-- ****** Menu Area End ****** -->
 
     <!-- ****** Welcome Area Start ****** -->
-    
-    {{--  <section class="fplus-hero-area" style="background-image: url({{ asset('front/img/bg-img/hero-1.jpg') }});" id="home">  --}}
-       <section class="fplus-hero-area" style="background-image: url({{ asset('front/img/bg-img/hero-1.jpg') }});" id="home">
+    @foreach ($secciones as $seccion)
+    <section class="fplus-hero-area" style="background-image: url({{ $seccion->banner }} );" id="home">
+    @endforeach
+    {{--  <section class="fplus-hero-area" style="background-image: url({{ asset('front/img/bg-img/hero-1.jpg') }});" id="home">  --}}       
         <div class="hero-content-area d-flex justify-content-end">
             <div class="hero-text">
                 @foreach ($masters as $master )
@@ -155,7 +158,10 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col-12 col-md-6">
                         <div class="about-us-thumb wow fadeIn" data-wow-delay="1s">
-                            <img src="front/img/bg-img/about-1.jpg" alt="">
+                            {{-- <img src="front/img/bg-img/about-1.jpg" alt=""> --}}
+                        
+                        <img src="{{ $seccion->imguno }}" class="seccion_home">
+                        
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
