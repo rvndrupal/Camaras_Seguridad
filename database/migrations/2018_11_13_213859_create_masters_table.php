@@ -19,7 +19,7 @@ class CreateMastersTable extends Migration
             $table->string('nosotros');
             $table->string('noso_titulo');
             $table->string('noso_descri');
-            $table->string('banner',200)->nullable();
+            
 
             $table->timestamps();
         });

@@ -128,8 +128,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('masters/create' , 'MasterController@create')->name('masters.create')
     ->middleware('permission:masters.create');
 
-    Route::put('masters/{master}', 'MasterController@update')->name('masters.update')
-    ->middleware('permission:masters.edit');
+    // Route::put('masters/{master}', 'MasterController@updatees')->name('masters.update')
+    // ->middleware('permission:masters.edit');
 
     Route::get('masters/{master}', 'MasterController@show')->name('masters.show')
     ->middleware('permission:masters.show');
