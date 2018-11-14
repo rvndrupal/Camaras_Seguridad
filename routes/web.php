@@ -119,6 +119,26 @@ Route::middleware(['auth'])->group(function(){
 
     //master edición de los campos   
 
+    Route::post('masters/store', 'MasterController@store')->name('masters.store')
+    ->middleware('permission:masters.create');
+
+    Route::get('masters', 'MasterController@index')->name('masters.index')
+    ->middleware('permission:masters.index');
+
+    Route::get('masters/create' , 'MasterController@create')->name('masters.create')
+    ->middleware('permission:masters.create');
+
+    Route::put('masters/{master}', 'MasterController@update')->name('masters.update')
+    ->middleware('permission:masters.edit');
+
+    Route::get('masters/{master}', 'MasterController@show')->name('masters.show')
+    ->middleware('permission:masters.show');
+
+    Route::delete('masters/{master}', 'MasterController@destroy')->name('masters.destroy')
+    ->middleware('permission:masters.destroy');
+
+    Route::get('masters/{master}/edit', 'MasterController@edit')->name('masters.edit')
+    ->middleware('permission:masters.edit');
  
 
     Route::post('editar_master', 'MasterController@update')->name('editar_master')

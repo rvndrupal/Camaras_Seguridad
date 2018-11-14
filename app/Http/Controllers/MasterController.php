@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
 
 use App\Master;
 use Illuminate\Http\Request;
@@ -22,8 +23,9 @@ class MasterController extends Controller
 
 
     public function index()
-    {
-        return view('front.home');
+    { 
+        $masters=Master::all();
+        return view('admin.masters.index',compact('masters'));
     }
 
     /**
@@ -33,7 +35,7 @@ class MasterController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.masters.create');
     }
 
     /**
@@ -44,7 +46,17 @@ class MasterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $master=Master::create($request->all());
+
+        if($request->file('banner')){ //si se manda el archivo
+            $path=Storage::disk('public')->put('image', $request->file('banner'));
+            //utiliza la funcion de guardar en public crea la carpeta image y pasa el archivo
+            $master->fill(['banner' => asset($path)])->save(); //actualizame la ruta en el post
+            //el asset toma toda la ruta y se genera correctamente toda la ruta
+        }
+        
+        return redirect()->route('masters.index')
+        ->with('info','Dato guardado con exito');
     }
 
     /**
@@ -55,7 +67,7 @@ class MasterController extends Controller
      */
     public function show(Master $master)
     {
-        //
+        return view('admin.masters.show', compact('master'));
     }
 
     /**
@@ -80,6 +92,17 @@ class MasterController extends Controller
     {
         $master=Master::find(1);
         $master->titulo=$request->titulo;
+        $master->nosotros=$request->nosotros;
+        $master->noso_titulo=$request->noso_titulo;
+        $master->noso_descri=$request->noso_descri;
+
+        if($request->file('banner')){ //si se manda el archivo
+            $path=Storage::disk('public')->put('image', $request->file('banner'));
+            //utiliza la funcion de guardar en public crea la carpeta image y pasa el archivo
+            $master->fill(['banner' => asset($path)])->save(); //actualizame la ruta en el post
+            //el asset toma toda la ruta y se genera correctamente toda la ruta
+        }
+
         $master->save();
             
         
@@ -94,6 +117,7 @@ class MasterController extends Controller
      */
     public function destroy(Master $master)
     {
-        //
+        $master->delete();
+        return back()->with('info','Eliminado Correctamente');
     }
 }

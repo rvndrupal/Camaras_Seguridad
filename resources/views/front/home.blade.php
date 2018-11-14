@@ -117,7 +117,9 @@
     <!-- ****** Menu Area End ****** -->
 
     <!-- ****** Welcome Area Start ****** -->
-    <section class="fplus-hero-area" style="background-image: url({{ asset('front/img/bg-img/hero-1.jpg') }});" id="home">
+    
+    {{--  <section class="fplus-hero-area" style="background-image: url({{ asset('front/img/bg-img/hero-1.jpg') }});" id="home">  --}}
+       <section class="fplus-hero-area" style="background-image: url({{ asset('front/img/bg-img/hero-1.jpg') }});" id="home">
         <div class="hero-content-area d-flex justify-content-end">
             <div class="hero-text">
                 @foreach ($masters as $master )
@@ -125,6 +127,7 @@
                  @endforeach  
                 @can('masters.update')                        
                 <button type="button" class="btn btn-primary btn-editar">Actualizar</button>
+               
                  @endcan  
                 {{ csrf_field() }}
                 <a href="#projects" class="view-portfolio-btn" id="scrollDown"><i class="fa fa-plus" aria-hidden="true"></i> View Portfolio</a>
@@ -139,7 +142,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h4>About Us</h4>
+                            @foreach ($masters as $master )
+                            <h4 class="nosotros">{{ $master->nosotros }}</h4>
+                             @endforeach                          
                         <div class="section-heading-line"></div>
                     </div>
                 </div>
@@ -155,8 +160,10 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="about-us-text wow fadeIn" data-wow-delay="1.5s">
-                            <h4>Who We Are</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor. Phasellus eget purus id felis dignissim convallis. Suspendisse et augue dui. Morbi gravida sed justo vel venenatis. Ut tempor pretium maximus. Donec libero diam, faucibus vitae lectus nec, accumsan gravida dui. Nam interdum mi eget lacus aliquet, sit amet ultricies.</p>
+                                @foreach ($masters as $master )
+                                <h4 class="noso_titulo">{{ $master->noso_titulo }}</h4>
+                                 <p class="noso_descri">{{ $master->noso_descri }}</p>
+                                @endforeach
                         </div>
                     </div>
                 </div>

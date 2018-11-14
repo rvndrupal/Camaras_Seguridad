@@ -124,7 +124,7 @@ class PermissionsTableSeeder extends Seeder
         //Products
 
         //permisos para editables.
-        
+
         Permission::create([
             'name' => 'Navegar Master',
             'slug' => 'masters.index',
@@ -132,12 +132,33 @@ class PermissionsTableSeeder extends Seeder
 
         ]);
 
-
         Permission::create([
-            'name' => 'Edicion de Master',
-            'slug' => 'masters.edit',
-            'description'  => 'Editar cualquier dato de un Editables del sistema',
+            'name' => 'Ver detalle de masters',
+            'slug' => 'masters.show',
+            'description'  => 'Ver en detalle cada master del sistema',
 
         ]);
+
+        Permission::create([
+            'name' => 'Crea un nuevo Master',
+            'slug' => 'masters.create',
+            'description'  => 'Crear un nuevo Master del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Edicion de masters',
+            'slug' => 'masters.edit',
+            'description'  => 'Editar cualquier dato de un Master del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Eliminar Master',
+            'slug' => 'masters.destroy',
+            'description'  => 'Eliminar cualquier dato de un Master del sistema',
+
+        ]);
+        
     }
 }
