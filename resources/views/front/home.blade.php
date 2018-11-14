@@ -183,9 +183,11 @@
                     <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
                         <div class="feature-title d-flex align-items-center">
                             <img src="front/img/icons/wallet.svg" alt="">
-                            <h5>Reasonable pricing</h5>
+                            @foreach ($masters as $master )
+                            <h5 class="b1">{{ $master->b1 }}</h5>
                         </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
+                        <p class="b2">{{ $master->b2 }}</p>
+
                     </div>
                 </div>
                 <!-- Single Feature -->
@@ -193,20 +195,21 @@
                     <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1.5s">
                         <div class="feature-title d-flex align-items-center">
                             <img src="front/img/icons/credit-card.svg" alt="">
-                            <h5>eCommerce support</h5>
+                            <h5 class="b3">{{ $master->b3 }}</h5>
                         </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
+                        <p class="b4">{{ $master->b4 }}</p>
                     </div>
                 </div>
                 <!-- Single Feature -->
                 <div class="col-12 col-lg-4">
                     <div class="fplus-single-feature wow fadeInUp" data-wow-delay="2s">
                         <div class="feature-title d-flex align-items-center">
-                            <img src="front/img/icons/switching-user.svg" alt="">
-                            <h5>User-friendly admin</h5>
+                            <img src="front/img/icons/credit-card.svg" alt="">
+                            <h5 class="b5">{{ $master->b5 }}</h5>
                         </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
+                        <p class="b6">{{ $master->b6 }}</p>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

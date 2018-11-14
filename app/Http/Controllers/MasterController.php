@@ -89,6 +89,13 @@ class MasterController extends Controller
         $master->nosotros=$request->nosotros;
         $master->noso_titulo=$request->noso_titulo;
         $master->noso_descri=$request->noso_descri;
+        $master->b1=$request->b1;
+        $master->b2=$request->b2;
+        $master->b3=$request->b3;
+        $master->b4=$request->b4;
+        $master->b5=$request->b5;
+        $master->b6=$request->b6;
+        
 
         // if($request->file('banner')){ //si se manda el archivo
         //     $path=Storage::disk('public')->put('image', $request->file('banner'));

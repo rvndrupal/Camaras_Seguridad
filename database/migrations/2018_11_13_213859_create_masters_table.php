@@ -19,6 +19,12 @@ class CreateMastersTable extends Migration
             $table->string('nosotros');
             $table->string('noso_titulo');
             $table->string('noso_descri');
+            $table->string('b1');
+            $table->string('b2');
+            $table->string('b3');
+            $table->string('b4');
+            $table->string('b5');
+            $table->string('b6');
             
 
             $table->timestamps();

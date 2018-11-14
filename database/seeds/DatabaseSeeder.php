@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 use Caffeinated\Shinobi\Models\Role;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -18,6 +19,8 @@ class DatabaseSeeder extends Seeder
 
         factory(App\Product::class, 10)->create();
         factory(App\User::class, 3)->create();
+        factory(App\Master::class, 1)->create();
+        factory(App\SeccionUno::class, 1)->create();
 
         Role::create([
             'name'  => 'Admin',
@@ -31,5 +34,7 @@ class DatabaseSeeder extends Seeder
             'password'=>bcrypt('rorro13'),
 
         ]);
+
+        
     }
 }
