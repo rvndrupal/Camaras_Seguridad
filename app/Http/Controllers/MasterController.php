@@ -95,6 +95,13 @@ class MasterController extends Controller
         $master->b4=$request->b4;
         $master->b5=$request->b5;
         $master->b6=$request->b6;
+        $master->b7=$request->b7;
+        // $master->b8=$request->b8;
+        // $master->b9=$request->b9;
+        // $master->b10=$request->b10;
+        // $master->b11=$request->b11;
+        // $master->b12=$request->b12;
+        // $master->b13=$request->b13;
         
 
         // if($request->file('banner')){ //si se manda el archivo

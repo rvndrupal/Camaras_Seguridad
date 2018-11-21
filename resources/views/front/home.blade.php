@@ -222,7 +222,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h4>Projects</h4>
+                            @foreach ($masters as $master )
+                        <h4 class="b7">{{ $master->b7 }}</h4>
+                        @endforeach
                         <div class="section-heading-line"></div>
                     </div>
                 </div>

@@ -25,6 +25,13 @@ class CreateMastersTable extends Migration
             $table->string('b4');
             $table->string('b5');
             $table->string('b6');
+            $table->string('b7');
+            $table->string('b8');
+            $table->string('b9');
+            $table->string('b10');
+            $table->string('b11');
+            $table->string('b12');
+            $table->string('b13');
             
 
             $table->timestamps();

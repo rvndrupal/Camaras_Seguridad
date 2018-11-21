@@ -9,6 +9,7 @@ if ($(".btn-editar").length > 0) {
     $(".b4").attr("contentEditable", true);
     $(".b5").attr("contentEditable", true);
     $(".b6").attr("contentEditable", true);
+    $(".b7").attr("contentEditable", true);
 } //si se puede editar
 
 
@@ -27,6 +28,7 @@ $(".btn-editar").on('click', function() {
     var b4 = $(".b4").text();
     var b5 = $(".b5").text();
     var b6 = $(".b6").text();
+    var b7 = $(".b7").text();
 
 
 
@@ -52,6 +54,7 @@ $(".btn-editar").on('click', function() {
             'b4': b4,
             'b5': b5,
             'b6': b6,
+            'b7': b7,
 
         },
         success: function(data) {
