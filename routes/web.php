@@ -16,6 +16,7 @@
 // });
 
  Route::get('/', 'MasterController@master')->name('master.index');
+ Route::get('/galeria', 'MasterController@galeria')->name('master.galeria');
 // //->middleware('permission:masters.index');
 
 //panel de administración

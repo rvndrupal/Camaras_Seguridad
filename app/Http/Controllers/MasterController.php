@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Master;
 use App\seccionUno;
 use App\Product;
+use App\Foto;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -21,10 +22,19 @@ class MasterController extends Controller
         //dd($masters);
         $secciones=seccionUno::orderBy('id','DESC')->take(1)->get();
 
-        $productos=Product::orderBY('id','DESC')->take(1)->get();
+        $videos=Product::orderBY('id','DESC')->take(1)->get();
+
+        //$camaras=Product::where('category_id','=','6')->take(6)->get();
+        $camaras=Product::with(['fotos'])->where('category_id','=','6')->take(4)->get();
+
+        $seguridad=Product::with(['fotos'])->where('category_id','=','1')->take(4)->get();
+        $alarmas=Product::with(['fotos'])->where('category_id','=','2')->take(4)->get();
+        $hogar=Product::with(['fotos'])->where('category_id','=','3')->take(4)->get();
+
+        //dd($camaras);
 
 
-        return view('front.home', compact('masters','secciones','productos')); 
+        return view('front.home', compact('masters','secciones','videos','productos','camaras','seguridad','alarmas','hogar')); 
     }
 
     public function index()

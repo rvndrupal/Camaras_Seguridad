@@ -234,21 +234,23 @@
 
         <div class="fplus-projects-menu">
             <div class="text-center portfolio-menu">
-                <button class="btn active" data-filter="*">All Fields</button>
-                <button class="btn" data-filter=".branding">branding</button>
-                <button class="btn" data-filter=".design">editorial design</button>
-                <button class="btn" data-filter=".graphic">graphic design</button>
+                <button class="btn active" data-filter="*">Todos</button>
+                <button class="btn" data-filter=".camaras">Camaras</button>
+                <button class="btn" data-filter=".seguridad">Seguridad</button>
+                <button class="btn" data-filter=".alarmas">Alarmas</button>
+                <button class="btn" data-filter=".hogar">Hogar</button>
             </div>
         </div>
 
         <div class="container-fluid">
             <div class="row no-gutters fplus-portfolio">
                 <!-- Single gallery Item Start -->
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item branding wow fadeInUp" data-wow-delay="0.2s">
-                    <img src="front/img/portfolio-img/p-1.jpg" alt="">
+                @foreach ($camaras as $camara )
+                <div class="col-12 col-sm-6 col-md-4 single_gallery_item camaras wow fadeInUp" data-wow-delay="0.2s">
+                    <img src="{{ $camara->fotos->first()->url }}" alt="">
                     <div class="gallery-hover-overlay d-flex justify-content-between">
                         <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="front/img/icons/plus.png" alt=""></a>
+                            <a href="single-portfolio.html"><img src="{{ $camara->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">
                             <a href="#">branding</a>
@@ -256,25 +258,16 @@
                         </div>
                     </div>
                 </div>
+                @endforeach{{-- Camaras --}}
                 <!-- Single gallery Item Start -->
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item branding wow fadeInUp" data-wow-delay="0.4s">
-                    <img src="front/img/portfolio-img/p-2.jpg" alt="">
+                
+                <!-- Single gallery Item Start -->
+                @foreach ($seguridad as $seg )
+                <div class="col-12 col-sm-6 col-md-4 single_gallery_item seguridad wow fadeInUp" data-wow-delay="0.6s">
+                    <img src="{{ $seg->fotos->first()->url }}" alt="">
                     <div class="gallery-hover-overlay d-flex justify-content-between">
                         <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="front/img/icons/plus.png" alt=""></a>
-                        </div>
-                        <div class="port-hover-text">
-                            <a href="#">branding</a>
-                            <h3>One Branding Identity</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single gallery Item Start -->
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item design wow fadeInUp" data-wow-delay="0.6s">
-                    <img src="front/img/portfolio-img/p-3.jpg" alt="">
-                    <div class="gallery-hover-overlay d-flex justify-content-between">
-                        <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="front/img/icons/plus.png" alt=""></a>
+                            <a href="single-portfolio.html"><img src="{{ $seg->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">
                             <a href="#">design</a>
@@ -282,25 +275,15 @@
                         </div>
                     </div>
                 </div>
+                @endforeach{{-- seguridad --}}
+
                 <!-- Single gallery Item Start -->
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item graphic wow fadeInUp" data-wow-delay="0.8s">
-                    <img src="front/img/portfolio-img/p-4.jpg" alt="">
+                @foreach ($alarmas as $ala )
+                <div class="col-12 col-sm-6 col-md-4 single_gallery_item alarmas wow fadeInUp" data-wow-delay="0.6s">
+                    <img src="{{ $ala->fotos->first()->url }}" alt="">
                     <div class="gallery-hover-overlay d-flex justify-content-between">
                         <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="front/img/icons/plus.png" alt=""></a>
-                        </div>
-                        <div class="port-hover-text">
-                            <a href="#">graphic</a>
-                            <h3>One Branding Identity</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single gallery Item Start -->
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item design wow fadeInUp" data-wow-delay="1s">
-                    <img src="front/img/portfolio-img/p-5.jpg" alt="">
-                    <div class="gallery-hover-overlay d-flex justify-content-between">
-                        <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="front/img/icons/plus.png" alt=""></a>
+                            <a href="single-portfolio.html"><img src="{{ $ala->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">
                             <a href="#">design</a>
@@ -308,20 +291,25 @@
                         </div>
                     </div>
                 </div>
+                @endforeach{{-- alarmas --}}
+
                 <!-- Single gallery Item Start -->
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item graphic wow fadeInUp" data-wow-delay="1.2s">
-                    <img src="front/img/portfolio-img/p-6.jpg" alt="">
+                @foreach ($hogar as $hog )
+                <div class="col-12 col-sm-6 col-md-4 single_gallery_item hogar wow fadeInUp" data-wow-delay="0.6s">
+                    <img src="{{ $hog->fotos->first()->url }}" alt="">
                     <div class="gallery-hover-overlay d-flex justify-content-between">
                         <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="front/img/icons/plus.png" alt=""></a>
+                            <a href="single-portfolio.html"><img src="{{ $hog->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">
-                            <a href="#">graphic</a>
+                            <a href="#">design</a>
                             <h3>One Branding Identity</h3>
                         </div>
                     </div>
                 </div>
-            </div>
+                @endforeach{{-- hogar --}}
+
+            </div> 
 
             <div class="row">
                 <div class="col-12">
@@ -361,9 +349,9 @@
                     <div class="col-12 col-md-10">
                         <div class="fplus-method-video wow fadeInUp" data-wow-delay="1s" style="background-image: url(front/img/bg-img/video.jpg);">
                             <div class="video-play-btn">
-                                @foreach ($productos as $pro )
-                                    @if($pro->iframe)
-                                    <div class="video"><i class="pe-7s-play" aria-hidden="true">{!! $pro->iframe !!}</i></div>
+                                @foreach ($videos as $v )
+                                    @if($v->iframe)
+                                    <div class="video"><i class="pe-7s-play" aria-hidden="true">{!! $v->iframe !!}</i></div>
                                     @endif
                                 @endforeach
                             </div>
