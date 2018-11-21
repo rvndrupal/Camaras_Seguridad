@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Master;
 use App\seccionUno;
+use App\Product;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -20,12 +21,16 @@ class MasterController extends Controller
         //dd($masters);
         $secciones=seccionUno::orderBy('id','DESC')->take(1)->get();
 
-        return view('front.home', compact('masters','secciones')); 
+        $productos=Product::orderBY('id','DESC')->take(1)->get();
+
+
+        return view('front.home', compact('masters','secciones','productos')); 
     }
 
     public function index()
     { 
         $masters=Master::all();
+      
         return view('admin.masters.index',compact('masters'));
     }
 
@@ -96,12 +101,12 @@ class MasterController extends Controller
         $master->b5=$request->b5;
         $master->b6=$request->b6;
         $master->b7=$request->b7;
-        // $master->b8=$request->b8;
-        // $master->b9=$request->b9;
-        // $master->b10=$request->b10;
-        // $master->b11=$request->b11;
-        // $master->b12=$request->b12;
-        // $master->b13=$request->b13;
+        $master->b8=$request->b8;
+        $master->b9=$request->b9;
+        $master->b10=$request->b10;
+        $master->b11=$request->b11;
+        $master->b12=$request->b12;
+        $master->b13=$request->b13;
         
 
         // if($request->file('banner')){ //si se manda el archivo

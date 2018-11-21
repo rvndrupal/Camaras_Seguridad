@@ -28,6 +28,7 @@
     <link href="{{ asset('front/css/others/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/others/pe-icon-7-stroke.css') }}" rel="stylesheet">
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    <link href="{{ asset('front/css/estilos.css') }}" rel="stylesheet">
     
 
     <!-- Responsive CSS -->
@@ -222,7 +223,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                            @foreach ($masters as $master )
+                         @foreach ($masters as $master )
                         <h4 class="b7">{{ $master->b7 }}</h4>
                         @endforeach
                         <div class="section-heading-line"></div>
@@ -337,7 +338,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h4>Methods</h4>
+                        @foreach ($masters as $master )
+                        <h4 class="b8">{{ $master->b8 }}</h4>
+                        @endforeach
                         <div class="section-heading-line"></div>
                     </div>
                 </div>
@@ -349,14 +352,20 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8">
                         <div class="fplus-method-text">
-                            <h4>How We Work</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor. Phasellus eget purus id felis dignissim convallis. Suspendisse et augue dui. Morbi gravida sed justo vel venenatis.</p>
+                            @foreach ($masters as $master )
+                            <h4 class="b9">{{ $master->b8 }}</h4>                            
+                            <p class="b10">{{ $master->b10 }}</p>
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-12 col-md-10">
                         <div class="fplus-method-video wow fadeInUp" data-wow-delay="1s" style="background-image: url(front/img/bg-img/video.jpg);">
                             <div class="video-play-btn">
-                                <a href="https://youtu.be/ZydsX1qjoBI" class="video--play--btn"><i class="pe-7s-play" aria-hidden="true"></i></a>
+                                @foreach ($productos as $pro )
+                                    @if($pro->iframe)
+                                    <div class="video"><i class="pe-7s-play" aria-hidden="true">{!! $pro->iframe !!}</i></div>
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -372,7 +381,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h4>Our clients</h4>
+                            @foreach ($masters as $master )
+                            <h4 class="b11">{{ $master->b11 }}</h4>
+                            @endforeach
                         <div class="section-heading-line"></div>
                     </div>
                 </div>
@@ -442,7 +453,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h4>Recent News</h4>
+                            @foreach ($masters as $master )
+                            <h4 class="b12">{{ $master->b12 }}</h4>
+                            @endforeach
                         <div class="section-heading-line"></div>
                     </div>
                 </div>
@@ -520,7 +533,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h4>Contact</h4>
+                            @foreach ($masters as $master )
+                            <h4 class="b13">{{ $master->b13 }}</h4>
+                            @endforeach
                         <div class="section-heading-line"></div>
                     </div>
                 </div>
