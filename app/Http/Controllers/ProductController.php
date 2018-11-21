@@ -76,8 +76,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        
-        return view('admin.products.edit', compact('product'));
+        $categories=Category::orderBy('nombre','ASC')->pluck('nombre','id');//paso solo el nombre y el id
+        return view('admin.products.edit', compact('product','categories'));
     }
 
     /**

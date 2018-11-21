@@ -20,10 +20,10 @@
 
                 <div class="panel-body">
                 
-                {!! Form::model($product, ['route'=> ['products.update', $product->url],
+                {!! Form::model($product, ['route'=> ['products.update', $product->id],
                  'method'=>'PUT']) !!}
 
-                @include('admin.products.partials.form')
+                @include('admin.products.partials.edit')
                 
                 {!! Form::close() !!}
                 
