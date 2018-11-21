@@ -29,7 +29,12 @@
           @can('products.index')
         <li><a href="{{ route('products.index') }}"><i class="fa fa-eye"></i>Productos</a></li>
          @endcan
+         @can('seccion_unos.index')
         <li><a href="{{ route('seccion_unos.index') }}"><i class="fa fa-eye"></i>Sección uno</a></li>
+         @endcan
+         @can('categories.index')
+         <li><a href="{{ route('categories.index') }}"><i class="fa fa-eye"></i>Categorías</a></li>
+          @endcan
       </ul>
     </li>
   </ul>
