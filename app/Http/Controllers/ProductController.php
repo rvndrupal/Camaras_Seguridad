@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -26,7 +27,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.products.create');
+        $categories=Category::orderBy('nombre','ASC')->pluck('nombre','id');//paso solo el nombre y el id
+        return view('admin.products.create',compact('categories'));
     }
 
     /**
@@ -39,9 +41,8 @@ class ProductController extends Controller
     {
 
         $this->validate($request,[
-            'name'=>'required',
-            'description'=>'required',
-            'created_at'=>'required'
+            'nombre'=>'required',
+            'descripcion'=>'required',
         ]);
 
 
@@ -49,11 +50,7 @@ class ProductController extends Controller
         // $product=Product::create($request->all());
         // $product->url=str_slug($request-get('name'));
 
-        $product=Product::create([
-            'name' => $request['name'],
-            'description' => $request['description'],
-            'url' =>str_slug($request['name']),
-        ]);
+        $product=Product::create($request->all());
         
         return redirect()->route('products.index')
         ->with('info','Producto guardado con exito');

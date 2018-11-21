@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
-
-        factory(App\Product::class, 10)->create();
-        factory(App\User::class, 3)->create();
+        factory(App\Category::class, 5)->create();
+        factory(App\Product::class, 5)->create();
+        factory(App\User::class, 3)->create();        
         factory(App\Master::class, 1)->create();
         factory(App\SeccionUno::class, 1)->create();
 

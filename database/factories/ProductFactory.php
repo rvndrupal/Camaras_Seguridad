@@ -3,10 +3,16 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Product::class, function (Faker $faker) {
-    $name=$faker->sentence;
+    
     return [
-        'name'=> $name,
-        'url'=>str_slug($name,'-'),
-        'description'=> $faker->sentence,
+        'nombre'=> $faker->name,
+        'descripcion'=> $faker->sentence,
+        'iframe'=> $faker->sentence,
+        'tamano'=> $faker->name,
+        'precio'=> $faker->name,
+        'color'=> $faker->name,
+        'peso'=> $faker->name,
+        'category_id' => rand(1,5),
+        
     ];
 });

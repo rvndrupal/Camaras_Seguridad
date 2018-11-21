@@ -7,3 +7,31 @@
     width: 555px;
     height: 555px;
 }
+
+.uno {
+    width: 643px;
+    height: 300px;
+}
+
+.dos_1,
+.dos_2 {
+    width: 320px;
+    height: 150px;
+}
+
+.tres_1 {
+    width: 643px;
+    height: 300px;
+    margin: 0px 0 7px 0px;
+}
+
+.tres_2,
+.tres_3 {
+    width: 320px;
+    height: 150px;
+}
+
+.video iframe {
+    width: 640px;
+    margin: 46px 0 0 0px;
+}

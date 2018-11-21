@@ -174,5 +174,15 @@ Route::middleware(['auth'])->group(function(){
     Route::get('categories/{category}/edit', 'CategoryController@edit')->name('categories.edit')
     ->middleware('permission:categories.edit');
 
+    //rutas para las fotos multiples.
+    Route::post('fotos/add', 'FotoController@store')->name('foto.store')
+    ->middleware('permission:fotos.create');
+
+    Route::post('fotos/{id}/edit', 'FotoController@editar')->name('foto.edit')
+    ->middleware('permission:fotos.edit');
+
+    Route::delete('fotos/{id}', 'FotoController@destroy')->name('fotos.destroy')
+    ->middleware('permission:fotos.destroy');
+
 
 });

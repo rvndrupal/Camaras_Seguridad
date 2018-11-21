@@ -29,29 +29,33 @@
           <th>ID</th>
           <th>NOMBRE</th>
           <th>DESCRIPCIÓN</th>
+          <th>CATEGORÍA</th>
           <th>PUBLICACIÓN</th>
           <th>ACCIONES</th>
          
         </tr>
         </thead>
         <tbody>
+           
             @foreach ($products as $producto )
             <tr>
                     <td>{{ $producto->id }}</td>
-                    <td>{{ $producto->name }}</td>
-                    <td>{!! $producto->description !!}</td>
+                    <td>{{ $producto->nombre }}</td>
+                    <?php $des=str_limit($producto->descripcion,200); ?>                   
+                    <td>{!! $des !!}</td>
+                    <td>{!! $producto->category->nombre !!}</td>
                     <td>{{ $producto->created_at }}</td>
                     <td width="150px">
                         @can('products.show')
-                        <a href="{{ route('products.show', $producto->url) }}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('products.show', $producto->id) }}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i></a>
                         @endcan  
                         @can('products.edit')
-                        <a href="{{ route('products.edit', $producto->url) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                        <a href="{{ route('products.edit', $producto->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                          @endcan
 
                          @can('products.destroy')
                                     
-                         {!! Form::open(['route'=>['products.destroy', $producto->url],
+                         {!! Form::open(['route'=>['products.destroy', $producto->id],
                          'method'=>'DELETE']) !!}
                          <button class="btn btn-xs btn-danger" style="margin: -22px 0 0 51px; position:absolute"><i class="fa fa-times"></i></button>
                          
