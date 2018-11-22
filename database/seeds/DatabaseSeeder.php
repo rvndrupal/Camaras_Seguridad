@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
-        factory(App\Category::class, 5)->create();
-        factory(App\Product::class, 5)->create();
+        factory(App\Category::class, 10)->create();
+        factory(App\Product::class, 20)->create();
         factory(App\User::class, 3)->create();        
         factory(App\Master::class, 1)->create();
         factory(App\SeccionUno::class, 1)->create();
@@ -33,6 +33,19 @@ class DatabaseSeeder extends Seeder
             'email'=>'rodrigo@gmail.com',
             'password'=>bcrypt('rorro13'),
 
+        ]);
+
+        App\Category::create([
+            'nombre'=>'seguridad',
+        ]);
+        App\Category::create([
+            'nombre'=>'alarmas',
+        ]);
+        App\Category::create([
+            'nombre'=>'hogar',
+        ]);
+        App\Category::create([
+            'nombre'=>'camaras',
         ]);
 
         

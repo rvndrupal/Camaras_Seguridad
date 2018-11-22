@@ -12,7 +12,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'precio'=> $faker->name,
         'color'=> $faker->name,
         'peso'=> $faker->name,
-        'category_id' => rand(1,5),
+        'category_id' => rand(5,9),
         
     ];
 });

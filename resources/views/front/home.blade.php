@@ -252,13 +252,13 @@
                         <div class="port-more-view">
                             <a href="single-portfolio.html"><img src="{{ $camara->fotos->first()->url }}" alt=""></a>
                         </div>
-                        <div class="port-hover-text">
-                            <a href="#">branding</a>
-                            <h3>One Branding Identity</h3>
-                        </div>
+                        <div class="port-hover-text">                         
+                                <a href="#">{{ $camara->nombre }}</a>
+                                <h3>{!! $camara->descripcion !!}</h3>
+                            </div>
                     </div>
-                </div>
-                @endforeach{{-- Camaras --}}
+                </div> @endforeach{{-- Camaras --}}
+                
                 <!-- Single gallery Item Start -->
                 
                 <!-- Single gallery Item Start -->
@@ -270,8 +270,8 @@
                             <a href="single-portfolio.html"><img src="{{ $seg->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">
-                            <a href="#">design</a>
-                            <h3>One Branding Identity</h3>
+                            <a href="#">{{ $seg->nombre }}</a>
+                            <h3>{!! $seg->descripcion !!}</h3>
                         </div>
                     </div>
                 </div>
@@ -286,8 +286,8 @@
                             <a href="single-portfolio.html"><img src="{{ $ala->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">
-                            <a href="#">design</a>
-                            <h3>One Branding Identity</h3>
+                                <a href="#">{{ $ala->nombre }}</a>
+                                <h3>{!! $ala->descripcion !!}</h3>
                         </div>
                     </div>
                 </div>
@@ -302,8 +302,8 @@
                             <a href="single-portfolio.html"><img src="{{ $hog->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">
-                            <a href="#">design</a>
-                            <h3>One Branding Identity</h3>
+                                <a href="#">{{ $hog->nombre }}</a>
+                                <h3>{!! $hog->descripcion !!}</h3>
                         </div>
                     </div>
                 </div>
