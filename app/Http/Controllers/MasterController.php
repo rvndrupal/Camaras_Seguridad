@@ -43,6 +43,12 @@ class MasterController extends Controller
         return view('front.home', compact('masters','secciones','videos','camaras','productos','seguridad','alarmas','hogar')); 
     }
 
+
+    public function detalle($id){
+        return view('front.detalle');
+    }
+
+
     public function index()
     { 
         $masters=Master::all();
