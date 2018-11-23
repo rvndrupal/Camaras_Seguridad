@@ -45,7 +45,13 @@ class MasterController extends Controller
 
 
     public function detalle($id){
-        return view('front.detalle');
+
+        $producto=Product::with(['fotos'])->where('id','=',$id)->get();
+
+       //dd($producto);
+        $relacionadas=Product::with(['fotos'])->where('category_id','=','14')->orderByRaw('RAND()')->take(3)->get();
+
+        return view('front.detalle',compact('producto','relacionadas'));
     }
 
 

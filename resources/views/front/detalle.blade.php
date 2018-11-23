@@ -113,7 +113,10 @@
     <!-- ****** Menu Area End ****** -->
 
     <!-- ****** Hero Area Start ****** -->
-    <div class="fplus-hero-area" style="background-image: url({{ asset('front/img/bg-img/hero-3.jpg') }});"></div>
+   @foreach ($producto as  $pro)
+   <div class="fplus-hero-area" style="background-image: url({{ $pro->fotos[0]->url }})"></div>
+   @endforeach
+   
     <!-- ****** Hero Area End ****** -->
 
     <!-- ****** Single Portfolio Area Start ****** -->
@@ -133,22 +136,29 @@
 
         <div class="fplus-portfolio-content-area">
             <div class="single-portfolio-text">
-                <p>editorial design</p>
-                <h2>Bau Magazine</h2>
+                <p>Producto</p>
+                @foreach ($producto as  $pro)
+                <h2>{{ $pro->nombre }}</h2>
+                
                 <div class="project-meta-data d-sm-flex">
                     <div class="project-client">
-                        <p>Clients</p>
-                        <p>Bau Design</p>
+                        <p>Peso</p>
+                        <p>{{ $pro->peso }}</p>
                     </div>
                     <div class="project-year">
-                        <p>Year</p>
-                        <p>2017</p>
+                        <p>Tamaño</p>
+                        <p>{{ $pro->tamano }}</p>
                     </div>
                     <div class="project-website">
-                        <p>Website</p>
-                        <p>baudesign.com</p>
+                        <p>Color</p>
+                        <p>{{ $pro->color }}</p>
                     </div>
+                    <div class="project-website">
+                            <p>Precio</p>
+                            <p>{{ $pro->precio }}</p>
+                        </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -161,13 +171,17 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col-12 col-md-6">
                         <div class="about-us-text">
-                            <h4>About Layout</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor. Phasellus eget purus id felis dignissim convallis. Suspendisse et augue dui. Morbi gravida sed justo vel venenatis. Ut tempor pretium maximus. Donec libero diam, faucibus vitae lectus nec, accumsan gravida dui. Nam interdum mi eget lacus aliquet, sit amet ultricies.</p>
+                            @foreach ($producto as  $pro)
+                            <h2 style="text-align:center">{{ $pro->nombre }}</h2>
+                            <p>{!! $pro->descripcion !!}</p>
+                            <hr>
+                            <h5 style="text-align:right">Categoría: {{ $pro->category->nombre }}</h5>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="about-us-thumb">
-                            <img src="{{ asset('front/img/bg-img/about-2.jpg') }}" alt="">
+                        <div class="about-us-thumb">                         
+                            <img src="{{ $pro->fotos[1]->url }}" alt="">
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -181,7 +195,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <img src="{{ asset('front/img/bg-img/hero-2.jpg') }}" alt="">
+                        @foreach ($producto as  $pro)
+                        <img src="{{ $pro->fotos[2]->url }}" alt="">
+                        @endforeach
                 </div>
             </div>
         </div>
@@ -193,7 +209,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h4>Projects</h4>
+                        <h4>Productos - Relacionados</h4>
                         <div class="section-heading-line"></div>
                     </div>
                 </div>
@@ -202,21 +218,23 @@
         <div class="container-fluid">
             <div class="row no-gutters fplus-portfolio">
                 <!-- Single gallery Item Start -->
+                @foreach ($relacionadas as $rel )
                 <div class="col-12 col-sm-6 col-md-4 single_gallery_item branding">
-                    <img src="{{ asset('front/img/portfolio-img/p-1.jpg') }}" alt="">
+                    <img src="{{ $rel->fotos->first()->url }}" alt="">
                     <div class="gallery-hover-overlay d-flex justify-content-between">
                         <div class="port-more-view">
-                            <a href="#"><img src="{{ asset('front/img/icons/plus.png') }}" alt=""></a>
+                            <a href="#"><img src="{{ $rel->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">
-                            <a href="#">branding</a>
-                            <h3>One Branding Identity</h3>
+                            <a href="../detalle/{{ $rel->id }}">{{ $rel->nombre }}</a>
+                            <h3>{!! $rel->descripcion !!}</h3>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
                 <!-- Single gallery Item Start -->
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item branding">
+                {{-- <div class="col-12 col-sm-6 col-md-4 single_gallery_item branding">
                     <img src="{{ asset('front/img/portfolio-img/p-2.jpg') }}" alt="">
                     <div class="gallery-hover-overlay d-flex justify-content-between">
                         <div class="port-more-view">
@@ -227,10 +245,10 @@
                             <h3>One Branding Identity</h3>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Single gallery Item Start -->
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item design">
+                {{-- <div class="col-12 col-sm-6 col-md-4 single_gallery_item design">
                     <img src="{{ asset('front/img/portfolio-img/p-3.jpg') }}" alt="">
                     <div class="gallery-hover-overlay d-flex justify-content-between">
                         <div class="port-more-view">
@@ -241,7 +259,7 @@
                             <h3>One Branding Identity</h3>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

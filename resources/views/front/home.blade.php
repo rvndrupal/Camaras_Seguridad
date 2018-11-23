@@ -270,7 +270,7 @@
                             <a href="single-portfolio.html"><img src="{{ $seg->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">
-                            <a href="#">{{ $seg->nombre }}</a>
+                            <a href="detalle/{{ $camara->id }}">{{ $seg->nombre }}</a>
                             <h3>{!! $seg->descripcion !!}</h3>
                         </div>
                     </div>
