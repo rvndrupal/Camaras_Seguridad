@@ -37,7 +37,7 @@
 }
 
 .parallaxuno {
-    background-image: url("/parallax/uno.jpg");
+    background-image: url("/parallax/dos.jpg");
     height: 500px;
     background-repeat: no-repeat;
     background-size: 1700px;
@@ -45,7 +45,7 @@
 }
 
 .parallaxdos {
-    background-image: url("/parallax/uno.jpg");
+    background-image: url("/parallax/tres.png");
     height: 500px;
     background-repeat: no-repeat;
     background-size: 1700px;
@@ -54,4 +54,8 @@
 
 .espacio {
     margin: 52px 0 0 0;
+}
+
+.b10 {
+    margin: -157px 0 0 0;
 }
