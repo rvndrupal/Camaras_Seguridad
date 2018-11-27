@@ -10,8 +10,8 @@ if ($(".btn-editar").length > 0) {
     $(".b5").attr("contentEditable", true);
     $(".b6").attr("contentEditable", true);
     $(".b7").attr("contentEditable", true);
-    $(".b8").attr("contentEditable", true);
-    $(".b9").attr("contentEditable", true);
+    // $(".b8").attr("contentEditable", true);
+    // $(".b9").attr("contentEditable", true);
     $(".b10").attr("contentEditable", true);
     $(".b11").attr("contentEditable", true);
     $(".b12").attr("contentEditable", true);
@@ -35,8 +35,8 @@ $(".btn-editar").on('click', function() {
     var b5 = $(".b5").text();
     var b6 = $(".b6").text();
     var b7 = $(".b7").text();
-    var b8 = $(".b8").text();
-    var b9 = $(".b9").text();
+    // var b8 = $(".b8").text();
+    // var b9 = $(".b9").text();
     var b10 = $(".b10").text();
     var b11 = $(".b11").text();
     var b12 = $(".b12").text();
@@ -67,8 +67,8 @@ $(".btn-editar").on('click', function() {
             'b5': b5,
             'b6': b6,
             'b7': b7,
-            'b8': b8,
-            'b9': b9,
+            // 'b8': b8,
+            // 'b9': b9,
             'b10': b10,
             'b11': b11,
             'b12': b12,
