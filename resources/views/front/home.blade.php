@@ -107,10 +107,11 @@
             </nav>
         </div>
         <!-- Header Social Icon -->
+        {{-- Redes sociales menu  https://github.com/bradvin/social-share-urls#facebook--}}
         <div class="header-social-info d-flex align-items-center justify-content-end">
             <div class="h-social-icon">
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/sharer.php?u={{ request()->fullUrl() }} title="Compartir en Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/intent/tweet?url={{ request()->fullUrl() }}&text={title}&via={user_id}&hashtags=Compartir"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
@@ -603,7 +604,7 @@
                         </form>
                     </div>
                     <div class="footer-social-widget">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" title="Compartir en Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
