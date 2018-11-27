@@ -215,9 +215,22 @@
             </div>
         </div>
     </section>
+
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="parallaxuno" data-stellar-background-ratio="0.5">
+                        <p>
+                           
+                        </p>
+                    </div>  
+                </div>
+            </div>
+        </div>
     <!-- ****** About Us Area End ****** -->
 
     <!-- ****** Gallery Area Start ****** -->
+    <p class="espacio"></p>
     <section class="fplus-projects-area bg-gray section-padding-0-120" id="projects">
         <div class="container">
             <div class="row">
@@ -241,6 +254,7 @@
                 <button class="btn" data-filter=".hogar">Hogar</button>
             </div>
         </div>  --}}
+        
 
         <div class="fplus-projects-menu">          
             <div class="text-center portfolio-menu">
@@ -288,14 +302,17 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        @foreach ($masters as $master )
+                        {{-- @foreach ($masters as $master )
                         <h4 class="b8">{{ $master->b8 }}</h4>
-                        @endforeach
-                        <div class="section-heading-line"></div>
+                        
+                        @endforeach --}}
+                      
                     </div>
-                </div>
+                </div>               
             </div>
         </div>
+
+       
 
         <div class="fplus-method-content bg-white text-center">
             <div class="container">
@@ -303,8 +320,9 @@
                     <div class="col-12 col-md-8">
                         <div class="fplus-method-text">
                             @foreach ($masters as $master )
-                            <h4 class="b9">{{ $master->b8 }}</h4>                            
-                            <p class="b10">{{ $master->b10 }}</p>
+                             {{-- <h4 class="b9">{{ $master->b9 }}</h4>                             --}}
+                            <h4 class="b10">{{ $master->b10 }}</h4> 
+                            <div class="section-heading-line"></div>
                             @endforeach
                         </div>
                     </div>
@@ -313,7 +331,10 @@
                             <div class="video-play-btn">
                                 @foreach ($videos as $v )
                                     @if($v->iframe)
-                                    <div class="video"><i class="pe-7s-play" aria-hidden="true">{!! $v->iframe !!}</i></div>
+                                        @if( $loop->iteration ==1)
+                                        <div class="video"><i class="pe-7s-play" aria-hidden="true">{!! $v->iframe !!}</i></div>
+                                        <p>{{  $loop->iteration }}</p>
+                                        @endif
                                     @endif
                                 @endforeach
                             </div>
@@ -340,61 +361,47 @@
             </div>
 
             <div class="row">
-                <div class="col-12">
-                    <div class="fplus-clients-logo d-flex">
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/1.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/2.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/3.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/4.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/5.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/2.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/4.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/5.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/2.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/1.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/4.png" alt=""></a>
-                        </div>
-                        <!-- Single clients -->
-                        <div class="single-clients-logo">
-                            <a href="#"><img src="front/img/clients-img/3.png" alt=""></a>
-                        </div>
-                    </div>
+                <div class="col-6">
+                        @foreach ($videos as $v )
+                        @if($v->iframe)
+                            @if( $loop->iteration == 2)
+                            <div class="video_tres"><i class="pe-7s-play" aria-hidden="true">{!! $v->iframe !!}</i></div>
+                            
+                            @endif
+                        @endif
+                        @endforeach
+                </div>
+                        
+                 <div class="col-6">
+                        @foreach ($videos as $v )
+                        @if($v->iframe)
+                            @if( $loop->iteration == 3)
+                            <div class="video_tres"><i class="pe-7s-play" aria-hidden="true">{!! $v->iframe !!}</i></div>
+                            
+                            @endif
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
+
+    {{-- Parallax dos --}}
+
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="parallaxdos" data-stellar-background-ratio="0.5">
+                        <p>
+                           
+                        </p>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+
+
     <!-- ****** Clients Area End ****** -->
 
     <!-- ****** Blog Area Start ****** -->
@@ -402,6 +409,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                        <p class="espacio"></p>
                     <div class="section-heading text-center">
                             @foreach ($masters as $master )
                             <h4 class="b12">{{ $master->b12 }}</h4>
@@ -413,27 +421,31 @@
 
             <div class="row">
                 <!-- Single Blog Post Area -->
+                @foreach ($personas as $per )
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
                         <!-- Blog Thumbnail -->
-                        <img src="front/img/blog-img/blog-1.jpg" alt="">
+                        <img style="width:350px; height:350px;" src="{{ $per->imguno }}" alt="">
                         <!-- Blog Content -->
+                        
                         <div class="fplus-blog-content">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                            <h5>{{ $per->descripcion }}</h5>
                             <div class="post-meta-data d-flex align-items-center">
                                 <div class="post-author-img">
-                                    <img src="front/img/blog-img/post-author.jpg" alt="">
+                                    <img src="{{ $per->imgdos }}" alt="">
                                 </div>
                                 <div class="post-author-name-date">
-                                    <h6>Lora Palmer</h6>
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
+                                    <h6>{{ $per->nombre }}</h6>
+                                    <p>{{ $per->apellidos }}</p>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
+                @endforeach
                 <!-- Single Blog Post Area -->
-                <div class="col-12 col-md-6 col-lg-4">
+                {{-- <div class="col-12 col-md-6 col-lg-4">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="1s">
                         <!-- Blog Thumbnail -->
                         <img src="front/img/blog-img/blog-2.jpg" alt="">
@@ -471,7 +483,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -623,4 +635,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ asset('front/js/active.js') }}"></script>
 
     <script src="{{ asset('front/js/master.js') }}"></script>
+
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/efecto.js"></script>
 </body>

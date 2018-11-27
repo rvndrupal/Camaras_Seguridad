@@ -208,5 +208,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('personas/{persona}/edit', 'PersonaController@edit')->name('personas.edit')
     ->middleware('permission:personas.edit');
 
+    
+
 
 });

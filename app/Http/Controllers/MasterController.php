@@ -8,6 +8,7 @@ use App\seccionUno;
 use App\Product;
 use App\Foto;
 use App\Category;
+use App\Persona;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -33,9 +34,13 @@ class MasterController extends Controller
 
         //dd($todos);
 
-        $videos=Product::orderBY('id','DESC')->take(1)->get();
+        $videos=Product::orderBY('id','DESC')->take(3)->get();
 
-        return view('front.home', compact('masters','secciones','videos','productos','lista','todos')); 
+        //dd($videos);
+
+        $personas=Persona::orderBy('id','DESC')->take(3)->get();
+
+        return view('front.home', compact('masters','secciones','videos','productos','lista','todos','personas')); 
     }
 
 

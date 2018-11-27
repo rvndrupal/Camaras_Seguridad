@@ -35,3 +35,23 @@
     width: 640px;
     margin: 46px 0 0 0px;
 }
+
+.parallaxuno {
+    background-image: url("/parallax/uno.jpg");
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: 1700px;
+    background-attachment: fixed;
+}
+
+.parallaxdos {
+    background-image: url("/parallax/uno.jpg");
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: 1700px;
+    background-attachment: fixed;
+}
+
+.espacio {
+    margin: 52px 0 0 0;
+}
