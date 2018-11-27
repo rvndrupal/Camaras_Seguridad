@@ -232,7 +232,7 @@
             </div>
         </div>
 
-        <div class="fplus-projects-menu">
+        {{--  <div class="fplus-projects-menu">
             <div class="text-center portfolio-menu">
                 <button class="btn active" data-filter="*">Todos</button>
                 <button class="btn" data-filter=".camaras">Camaras</button>
@@ -240,74 +240,35 @@
                 <button class="btn" data-filter=".alarmas">Alarmas</button>
                 <button class="btn" data-filter=".hogar">Hogar</button>
             </div>
+        </div>  --}}
+
+        <div class="fplus-projects-menu">          
+            <div class="text-center portfolio-menu">
+                    <button class="btn active" data-filter="*">Todos</button>
+                    @foreach ($lista as  $lis )
+                    <button class="btn" data-filter=".{{ $lis->nombre }}">{{ $lis->nombre }}</button>
+                    @endforeach
+             </div>
         </div>
 
         <div class="container-fluid">
             <div class="row no-gutters fplus-portfolio">
                 <!-- Single gallery Item Start -->
-                @foreach ($camaras as $camara )
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item camaras wow fadeInUp" data-wow-delay="0.2s">
-                    <img src="{{ $camara->fotos->first()->url }}" alt="">
+
+                @foreach ($todos as $todo )
+                
+                <div class="col-12 col-sm-6 col-md-4 single_gallery_item {{ $todo->category->nombre }} wow fadeInUp" data-wow-delay="0.2s">
+                    <img src="{{ $todo->fotos->first()->url }}" alt="">
                     <div class="gallery-hover-overlay d-flex justify-content-between">
                         <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="{{ $camara->fotos->first()->url }}" alt=""></a>
+                            <a href="single-portfolio.html"><img src="{{ $todo->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">                         
-                                <a href="detalle/{{ $camara->id }}">{{ $camara->nombre }}</a>
-                                <h3>{!! $camara->descripcion !!}</h3>
+                                <a href="detalle/{{ $todo->id }}">{{ $todo->nombre }}</a>
+                                <h3>{!! $todo->descripcion !!}</h3>
                             </div>
                     </div>
-                </div> @endforeach{{-- Camaras --}}
-                
-                <!-- Single gallery Item Start -->
-                
-                <!-- Single gallery Item Start -->
-                @foreach ($seguridad as $seg )
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item seguridad wow fadeInUp" data-wow-delay="0.6s">
-                    <img src="{{ $seg->fotos->first()->url }}" alt="">
-                    <div class="gallery-hover-overlay d-flex justify-content-between">
-                        <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="{{ $seg->fotos->first()->url }}" alt=""></a>
-                        </div>
-                        <div class="port-hover-text">
-                            <a href="detalle/{{ $camara->id }}">{{ $seg->nombre }}</a>
-                            <h3>{!! $seg->descripcion !!}</h3>
-                        </div>
-                    </div>
-                </div>
-                @endforeach{{-- seguridad --}}
-
-                <!-- Single gallery Item Start -->
-                @foreach ($alarmas as $ala )
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item alarmas wow fadeInUp" data-wow-delay="0.6s">
-                    <img src="{{ $ala->fotos->first()->url }}" alt="">
-                    <div class="gallery-hover-overlay d-flex justify-content-between">
-                        <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="{{ $ala->fotos->first()->url }}" alt=""></a>
-                        </div>
-                        <div class="port-hover-text">
-                                <a href="#">{{ $ala->nombre }}</a>
-                                <h3>{!! $ala->descripcion !!}</h3>
-                        </div>
-                    </div>
-                </div>
-                @endforeach{{-- alarmas --}}
-
-                <!-- Single gallery Item Start -->
-                @foreach ($hogar as $hog )
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item hogar wow fadeInUp" data-wow-delay="0.6s">
-                    <img src="{{ $hog->fotos->first()->url }}" alt="">
-                    <div class="gallery-hover-overlay d-flex justify-content-between">
-                        <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="{{ $hog->fotos->first()->url }}" alt=""></a>
-                        </div>
-                        <div class="port-hover-text">
-                                <a href="#">{{ $hog->nombre }}</a>
-                                <h3>{!! $hog->descripcion !!}</h3>
-                        </div>
-                    </div>
-                </div>
-                @endforeach{{-- hogar --}}
+                </div> @endforeach
 
             </div> 
 

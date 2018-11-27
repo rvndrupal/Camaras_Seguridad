@@ -7,6 +7,7 @@ use App\Master;
 use App\seccionUno;
 use App\Product;
 use App\Foto;
+use App\Category;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -24,23 +25,17 @@ class MasterController extends Controller
 
         $productos=Product::orderBy('id','DESC')->get();
 
-     
+        $lista=Category::orderBy('id','DESC')->take(5)->get();
+
+        //dd($lista);
+
+        $todos=Product::with(['category','fotos'])->orderBy('id','DESC')->take(20)->get();
+
+        //dd($todos);
 
         $videos=Product::orderBY('id','DESC')->take(1)->get();
 
-        //$camaras=Product::where('category_id','=','6')->take(6)->get();
-        $camaras=Product::with(['fotos'])->where('category_id','=','14')->take(5)->get();
-       
-        //dd($camaras);
-
-        $seguridad=Product::with(['fotos'])->where('category_id','=','11')->take(5)->get();
-        $alarmas=Product::with(['fotos'])->where('category_id','=','12')->take(5)->get();
-        $hogar=Product::with(['fotos'])->where('category_id','=','13')->take(5)->get();
-
-        //dd($camaras);
-
-
-        return view('front.home', compact('masters','secciones','videos','camaras','productos','seguridad','alarmas','hogar')); 
+        return view('front.home', compact('masters','secciones','videos','productos','lista','todos')); 
     }
 
 

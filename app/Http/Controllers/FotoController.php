@@ -40,21 +40,28 @@ class FotoController extends Controller
             $producto=Product::orderBy('id','DESC')->take(1)->pluck('id');
             //dd($producto->all());
             $id=$producto[0]+1;
+            //dd($id);
             
        
             $foto=$request->file('foto');
-
-            //recordar ejecutar comando-> php artisan storage:link
-
-            $img=$foto->store('public');  //loguarda en esta ruta storage/app/public sin cambiar el local
-            //    // $url=$foto->store('posts');  //cambiando el local a public
-            //    //ejecutar  php artisan storage:link    para que funcione
+            $img=$foto->store('public'); 
             $url= Storage::url($img);
 
             Foto::create([
            'url'=>$url,
            'product_id'=>$id,
             ]);
+
+        //     //recordar ejecutar comando-> php artisan storage:link
+
+        //     //    // $url=$foto->store('posts');  //cambiando el local a public
+        //     //    //ejecutar  php artisan storage:link    para que funcione
+        //     $url= Storage::url($img);
+
+        //     Foto::create([
+        //    'url'=>$url,
+        //    'product_id'=>$id,
+        //     ]);
         
         
     }
