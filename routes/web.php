@@ -186,5 +186,27 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('fotos/{id}', 'FotoController@destroy')->name('fotos.destroy')
     ->middleware('permission:fotos.destroy');
 
+    //personas
+    Route::post('personas/store', 'PersonaController@store')->name('personas.store')
+    ->middleware('permission:personas.create');
+
+    Route::get('personas', 'PersonaController@index')->name('personas.index')
+    ->middleware('permission:personas.index');
+
+    Route::get('personas/create' , 'PersonaController@create')->name('personas.create')
+    ->middleware('permission:personas.create');
+
+    Route::put('personas/{persona}', 'PersonaController@update')->name('personas.update')
+    ->middleware('permission:personas.edit');
+
+    Route::get('personas/{persona}', 'PersonaController@show')->name('personas.show')
+    ->middleware('permission:personas.show');
+
+    Route::delete('personas/{persona}', 'PersonaController@destroy')->name('personas.destroy')
+    ->middleware('permission:personas.destroy');
+
+    Route::get('personas/{persona}/edit', 'PersonaController@edit')->name('personas.edit')
+    ->middleware('permission:personas.edit');
+
 
 });

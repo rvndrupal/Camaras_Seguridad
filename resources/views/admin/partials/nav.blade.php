@@ -35,6 +35,9 @@
          @can('categories.index')
          <li><a href="{{ route('categories.index') }}"><i class="fa fa-eye"></i>Categorías</a></li>
           @endcan
+        @can('personas.index')
+        <li><a href="{{ route('personas.index') }}"><i class="fa fa-eye"></i>Personas</a></li>
+        @endcan
       </ul>
     </li>
   </ul>

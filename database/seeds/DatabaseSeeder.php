@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         factory(App\User::class, 1)->create();        
         factory(App\Master::class, 1)->create();
         factory(App\SeccionUno::class, 1)->create();
+        factory(App\Persona::class, 4)->create();
 
         Role::create([
             'name'  => 'Admin',

@@ -207,6 +207,44 @@ class PermissionsTableSeeder extends Seeder
         ]);
         //CATEGORIAS
 
+
+         //persona
+         Permission::create([
+            'name' => 'Navegar por las Personas',
+            'slug' => 'personas.index',
+            'description'  => 'Lista y navega todos los personas del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Ver detalle de personas',
+            'slug' => 'personas.show',
+            'description'  => 'Ver en detalle de cada Persona del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Crea una nueva Persona',
+            'slug' => 'personas.create',
+            'description'  => 'Crear una nueva Persona del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Edicion de personas',
+            'slug' => 'personas.edit',
+            'description'  => 'Editar cualquier Persona del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Eliminar Persona',
+            'slug' => 'personas.destroy',
+            'description'  => 'Eliminar cualquier Persona del sistema',
+
+        ]);
+        //persona
+
        
         
     }

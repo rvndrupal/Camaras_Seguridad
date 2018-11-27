@@ -126,7 +126,7 @@
 
     <!-- ****** Hero Area Start ****** -->
    @foreach ($header as  $hea)
-   <div class="fplus-hero-area" style="background-image: url({{ $hea->fotos[0]->url }})"></div>
+   <div class="fplus-hero-area" style="background-image: url({{ $hea->fotos[0]->url }}); height:120px"></div>
    @endforeach
    
     <!-- ****** Hero Area End ****** -->
@@ -173,7 +173,7 @@
                 
             </div>
         </div> --}}
-    </div> --}}
+    </div> 
 
     <div class="container">
         <div class="row ">
@@ -194,9 +194,10 @@
                               <th>DESCRIPCIÓN</th>
                               <th>CATEGORÍA</th>
                               <th>TAMAÑO</th>
-                              <th>IMÁGEN</th>
                               <th>PRECIO</th>
-                              <th>ACCIONES</th>
+                              <th>IMÁGEN</th>                              
+                              <th>VER</th>
+                              
                              
                             </tr>
                             </thead>
@@ -210,12 +211,10 @@
                                         <td>{!! $des !!}</td>
                                         <td>{!! $producto->category->nombre !!}</td>
                                         <td>{{ $producto->tamano }}</td>
-                                        <td><img style="width:100px" src="{{ $producto->fotos->first()->url }}" alt=""></td>
                                         <td>{{ $producto->precio }}</td>
+                                        <td><img style="width:100px" src="{{ $producto->fotos->first()->url }}" alt=""></td>                                        
                                         <td width="2px">
-                                           
                                             <a href=" detalle/{{ $producto->id }} " class="btn btn-lg btn-default"><i class="fa fa-eye"></i></a>
-                                            
                                         </td>
                     
                                     </tr>
