@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Foto;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class FotoController extends Controller
@@ -41,6 +42,8 @@ class FotoController extends Controller
             //dd($producto->all());
             $id=$producto[0]+1;
             //dd($id);
+
+           
             
        
             $foto=$request->file('foto');
@@ -52,18 +55,6 @@ class FotoController extends Controller
            'product_id'=>$id,
             ]);
 
-        //     //recordar ejecutar comando-> php artisan storage:link
-
-        //     //    // $url=$foto->store('posts');  //cambiando el local a public
-        //     //    //ejecutar  php artisan storage:link    para que funcione
-        //     $url= Storage::url($img);
-
-        //     Foto::create([
-        //    'url'=>$url,
-        //    'product_id'=>$id,
-        //     ]);
-        
-        
     }
 
     //para editar     

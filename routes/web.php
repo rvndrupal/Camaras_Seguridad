@@ -17,6 +17,7 @@
 
  Route::get('/', 'MasterController@master')->name('master.index');
  Route::get('/detalle/{id}', 'MasterController@detalle')->name('master.detalle');
+ Route::get('/todos', 'MasterController@todos')->name('master.todos');
 // //->middleware('permission:masters.index');
 
 //panel de administración

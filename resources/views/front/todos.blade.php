@@ -17,6 +17,18 @@
     <!-- Core Stylesheet -->
     <link href="{{ asset('front/style.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ asset('adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ asset('adminlte/bower_components/font-awesome/css/font-awesome.min.css') }}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{{ asset('adminlte/bower_components/Ionicons/css/ionicons.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('adminlte/dist/css/AdminLTE.min.css') }}">
+  <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+
 
 
     <link href="{{ asset('front/css/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
@@ -113,14 +125,14 @@
     <!-- ****** Menu Area End ****** -->
 
     <!-- ****** Hero Area Start ****** -->
-   @foreach ($producto as  $pro)
-   <div class="fplus-hero-area" style="background-image: url({{ $pro->fotos[0]->url }})"></div>
+   @foreach ($header as  $hea)
+   <div class="fplus-hero-area" style="background-image: url({{ $hea->fotos[0]->url }})"></div>
    @endforeach
    
     <!-- ****** Hero Area End ****** -->
 
     <!-- ****** Single Portfolio Area Start ****** -->
-    <div class="fplus-single-portfolio-area bg-gray section-padding-100">
+    {{-- <div class="fplus-single-portfolio-area bg-gray section-padding-100">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6">
@@ -134,160 +146,94 @@
             </div>
         </div>
 
-        <div class="fplus-portfolio-content-area">
+        {{-- <div class="fplus-portfolio-content-area">
             <div class="single-portfolio-text">
-                <p>Producto</p>
-                @foreach ($producto as  $pro)
-                <h2>{{ $pro->nombre }}</h2>
+                <p>Nuestros Productos</p>
+               
+                <h2>Lista de Todos Nuestros Productos</h2>
                 
                 <div class="project-meta-data d-sm-flex">
                     <div class="project-client">
                         <p>Peso</p>
-                        <p>{{ $pro->peso }}</p>
+                        <p>Servicio</p>
                     </div>
                     <div class="project-year">
                         <p>Tamaño</p>
-                        <p>{{ $pro->tamano }}</p>
+                        <p>Garantia</p>
                     </div>
                     <div class="project-website">
                         <p>Color</p>
-                        <p>{{ $pro->color }}</p>
+                        <p>Atención</p>
                     </div>
                     <div class="project-website">
                             <p>Precio</p>
-                            <p>{{ $pro->precio }}</p>
+                            <p>Compromiso</p>
                         </div>
                 </div>
-                @endforeach
+                
             </div>
+        </div> --}}
+    </div> --}}
+
+    <div class="container">
+        <div class="row ">
+                <div class="col-12">
+                        <div class="box-header">
+                          <h3 class="box-title">Todos los Productos</h3>
+                          Productos
+                         
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                               
+                          <table id="productos_table" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                              
+                              <th>NOMBRE</th>
+                              <th>DESCRIPCIÓN</th>
+                              <th>CATEGORÍA</th>
+                              <th>TAMAÑO</th>
+                              <th>IMÁGEN</th>
+                              <th>PRECIO</th>
+                              <th>ACCIONES</th>
+                             
+                            </tr>
+                            </thead>
+                            <tbody>
+                               
+                                @foreach ($products as $producto )
+                                <tr>
+                                       
+                                        <td>{{ $producto->nombre }}</td>
+                                        <?php $des=str_limit($producto->descripcion,200); ?>                   
+                                        <td>{!! $des !!}</td>
+                                        <td>{!! $producto->category->nombre !!}</td>
+                                        <td>{{ $producto->tamano }}</td>
+                                        <td><img style="width:100px" src="{{ $producto->fotos->first()->url }}" alt=""></td>
+                                        <td>{{ $producto->precio }}</td>
+                                        <td width="2px">
+                                           
+                                            <a href=" detalle/{{ $producto->id }} " class="btn btn-lg btn-default"><i class="fa fa-eye"></i></a>
+                                            
+                                        </td>
+                    
+                                    </tr>
+                                @endforeach
+                            
+                           
+                            
+                            </tbody>
+                            
+                          </table>
+                        </div>
+                        <!-- /.box-body -->
+                      </div>
+
         </div>
     </div>
-    <!-- ****** Single Portfolio Area End ****** -->
-
-    <!-- ****** About Us Area Start ****** -->
-    <section class="fplus-about-us-area bg-gray">
-        <div class="container">
-            <div class="about-us-content">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-12 col-md-6">
-                        <div class="about-us-text">
-                            @foreach ($producto as  $pro)
-                            <h2 style="text-align:center">{{ $pro->nombre }}</h2>
-                            <p>{!! $pro->descripcion !!}</p>
-                            <hr>
-                            <h5 style="text-align:right">Categoría: {{ $pro->category->nombre }}</h5>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="about-us-thumb">                         
-                            <img src="{{ $pro->fotos[1]->url }}" alt="">
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ****** About Us Area End ****** -->
-
-    <!-- ****** Project Single Thumb ****** -->
-    <div class="fplus-project-single-thumb bg-gray section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                        @foreach ($producto as  $pro)
-                        <img src="{{ $pro->fotos[2]->url }}" alt="">
-                        
-                </div>
-           
-
-                <div class="col-8">
-                    <div class=" wow fadeInUp" data-wow-delay="1s" style="">
-                        <div class="video-play-btn">
-                        
-                                @if($pro->iframe)
-                                <div class="video_detalle"><i class="pe-7s-play" aria-hidden="true">{!! $pro->iframe !!}</i></div>
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ****** Gallery Area Start ****** -->
-    <section class="fplus-projects-area bg-gray" id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h4>  Más Productos</h4>
-                        <div class="section-heading-line"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row no-gutters fplus-portfolio">
-                <!-- Single gallery Item Start -->
-                @foreach ($relacionadas as $rel )
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item branding">
-                    <img src="{{ $rel->fotos->first()->url }}" alt="">
-                    <div class="gallery-hover-overlay d-flex justify-content-between">
-                        <div class="port-more-view">
-                            <a href="#"><img src="{{ $rel->fotos->first()->url }}" alt=""></a>
-                        </div>
-                        <div class="port-hover-text">
-                            <a href="../detalle/{{ $rel->id }}">{{ $rel->nombre }}</a>
-                            <h3>{!! $rel->descripcion !!}</h3>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-
-                <!-- Single gallery Item Start -->
-                {{-- <div class="col-12 col-sm-6 col-md-4 single_gallery_item branding">
-                    <img src="{{ asset('front/img/portfolio-img/p-2.jpg') }}" alt="">
-                    <div class="gallery-hover-overlay d-flex justify-content-between">
-                        <div class="port-more-view">
-                            <a href="#"><img src="{{ asset('front/img/icons/plus.png') }}" alt=""></a>
-                        </div>
-                        <div class="port-hover-text">
-                            <a href="#">branding</a>
-                            <h3>One Branding Identity</h3>
-                        </div>
-                    </div>
-                </div> --}}
-
-                <!-- Single gallery Item Start -->
-                {{-- <div class="col-12 col-sm-6 col-md-4 single_gallery_item design">
-                    <img src="{{ asset('front/img/portfolio-img/p-3.jpg') }}" alt="">
-                    <div class="gallery-hover-overlay d-flex justify-content-between">
-                        <div class="port-more-view">
-                            <a href="#"><img src="{{ asset('front/img/icons/plus.png') }}" alt=""></a>
-                        </div>
-                        <div class="port-hover-text">
-                            <a href="#">design</a>
-                            <h3>One Branding Identity</h3>
-                        </div>
-                    </div>
-                </div> --}}
-            </div>
-        </div>
-        <hr>
-
-        <div class="row">
-                <div class="col-12">
-                    <a href="{{ route('master.todos') }}" class="load-more-btn text-center d-block mt-50"><i class="fa fa-plus" aria-hidden="true"></i> Todos los Productos</a>
-                </div>
-            </div>
-        
-            <hr><p></p>
-
-
-    </section>
-    <!-- ****** Gallery Area End ****** -->
+    <hr>
+    
 
     <!-- ****** Footer Area Start ****** -->
     <footer class="fplus-footer-area">
@@ -361,4 +307,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ asset('front/js/active.js') }}"></script>
 
     <script src="{{ asset('front/js/master.js') }}"></script>
+
+    
+
+<script src="{{ asset('adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 </body>
+
+
+
+
+
+
+<script>
+        $(function () {
+          $('#productos_table').DataTable({
+            'paging'      : true,
+            'lengthChange': true,
+            'searching'   : true,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : true
+          })
+        })
+</script>

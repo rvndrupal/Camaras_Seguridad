@@ -255,26 +255,27 @@
             <div class="row no-gutters fplus-portfolio">
                 <!-- Single gallery Item Start -->
 
-                @foreach ($todos as $todo )
+                 @foreach ($todos as $todo )
                 
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item {{ $todo->category->nombre }} wow fadeInUp" data-wow-delay="0.2s">
-                    <img src="{{ $todo->fotos->first()->url }}" alt="">
+                 <div class="col-12 col-sm-6 col-md-4 single_gallery_item {{ $todo->category->nombre }} wow fadeInUp" data-wow-delay="0.2s">
+                    <img src="{{  $todo->fotos->first()->url }}" alt="">
                     <div class="gallery-hover-overlay d-flex justify-content-between">
                         <div class="port-more-view">
-                            <a href="single-portfolio.html"><img src="{{ $todo->fotos->first()->url }}" alt=""></a>
+                            <a href="single-portfolio.html"><img src="{{  $todo->fotos->first()->url }}" alt=""></a>
                         </div>
                         <div class="port-hover-text">                         
                                 <a href="detalle/{{ $todo->id }}">{{ $todo->nombre }}</a>
                                 <h3>{!! $todo->descripcion !!}</h3>
-                            </div>
+                        </div>
                     </div>
-                </div> @endforeach
-
+                </div>
+                   @endforeach
+                 
             </div> 
 
             <div class="row">
                 <div class="col-12">
-                    <a href="#" class="load-more-btn text-center d-block mt-50"><i class="fa fa-plus" aria-hidden="true"></i> Load More</a>
+                    <a href="{{ route('master.todos') }}" class="load-more-btn text-center d-block mt-50"><i class="fa fa-plus" aria-hidden="true"></i> Todos los Productos</a>
                 </div>
             </div>
         </div>

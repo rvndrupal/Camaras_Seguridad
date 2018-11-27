@@ -25,11 +25,11 @@ class MasterController extends Controller
 
         $productos=Product::orderBy('id','DESC')->get();
 
-        $lista=Category::orderBy('id','DESC')->take(5)->get();
+        $lista=Category::orderBy('id','DESC')->take(4)->get();
 
         //dd($lista);
 
-        $todos=Product::with(['category','fotos'])->orderBy('id','DESC')->take(20)->get();
+        $todos=Product::with(['category','fotos'])->orderBy('category_id','DESC')->take(20)->get();
 
         //dd($todos);
 
@@ -44,9 +44,19 @@ class MasterController extends Controller
         $producto=Product::with(['fotos'])->where('id','=',$id)->get();
 
        //dd($producto);
-        $relacionadas=Product::with(['fotos'])->where('category_id','=','14')->orderByRaw('RAND()')->take(3)->get();
+        $relacionadas=Product::with(['fotos'])->orderByRaw('RAND()')->take(3)->get();
 
         return view('front.detalle',compact('producto','relacionadas'));
+    }
+
+    public function todos(){
+
+        $products=Product::orderBy('id','DESC')->get();
+
+        $header=Product::with(['fotos'])->orderByRaw('RAND()')->take(1)->get();
+
+
+        return view('front.todos',compact('header','products'));
     }
 
 
