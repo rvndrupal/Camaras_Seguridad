@@ -2,11 +2,11 @@
 
 @section('content')
 <h1>
-        Persona
+        Noticias
         <small>Nueva </small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ route('personas.index') }}"><i class="fa fa-dashboard"></i> Listado de las Personas</a></li>
+        <li><a href="{{ route('personas.index') }}"><i class="fa fa-dashboard"></i> Listado de las Noticias</a></li>
         <li class="active">Categoria</li>
       </ol>
 <div class="container">
@@ -14,7 +14,7 @@
         <div class="col-md-12 ">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   Nueva Persona
+                   Nueva Noticia
                 </div>
 
                 <div class="panel-body">

@@ -4,17 +4,17 @@
 
 
 <h1>
-   Personas
+   Noticias
     <small>Sección Principal</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i>Listado de Personas</a></li>
-    <li class="active">Personas</li>
+    <li><a href="#"><i class="fa fa-dashboard"></i>Listado de Noticias</a></li>
+    <li class="active">Notas</li>
   </ol>
 
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Todos las Personas</h3>
+      <h3 class="box-title">Todos las Noticias</h3>
       Productos
       @can('personas.create')
       <a href="{{ route('personas.create') }}" class="btn btn-sm btn-primary pull-right">Nuevo</a>
@@ -27,9 +27,9 @@
         <thead>
         <tr>
           <th>ID</th>
-          <th>NOMBRE</th> 
-          <th>APELLIDOS</th>
-          <th>DESCRIPCIÓN</th>         
+          <th>TÍTULO</th> 
+          <th>SUB UNO</th>
+          <th>SUB DOS</th>         
           <th>ACCIONES</th>
          
         </tr>

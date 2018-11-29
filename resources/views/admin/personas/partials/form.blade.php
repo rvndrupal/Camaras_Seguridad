@@ -3,21 +3,21 @@
 
 <div class="col-md-8">
         <div class="from-group">    
-            {!! Form::label('nombre','Nombre ') !!}
+            {!! Form::label('nombre','Título ') !!}
             
             {!! Form::text('nombre', null, ['class' => 'form-control']) !!}   
             
         </div>
         
         <div class="from-group">    
-                {!! Form::label('apellidos','Apellidos') !!}
+                {!! Form::label('apellidos','Sub uno') !!}
                 
                 {!! Form::text('apellidos', null, ['class' => 'form-control']) !!}   
                 
         </div>
         
         <div class="from-group">    
-                {!! Form::label('descripcion','Descripcion') !!}
+                {!! Form::label('descripcion','Sub dos') !!}
                 
                 {!! Form::text('descripcion', null, ['class' => 'form-control']) !!}   
                 

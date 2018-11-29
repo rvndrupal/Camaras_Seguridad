@@ -24,8 +24,9 @@
                  
                 <p> <strong>Nombre</strong> {{ $product->nombre }}</p>
                 <p> <strong>Descripción</strong> {!! $product->descripcion !!}</p>
-
-                @if($product->fotos->count()===1)                
+                @if($product->fotos->count()==0)
+                {{ "" }}
+                @elseif($product->fotos->count()===1)                
                 <img class="uno" src=" {{ $product->fotos->first()->url }}">                
                 @elseif($product->fotos->count() == 2)
                 <?php $x=0;?>              

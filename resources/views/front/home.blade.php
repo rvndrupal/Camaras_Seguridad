@@ -77,25 +77,25 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#about">Sobre Nosotros</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="fplusDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                             <div class="dropdown-menu" aria-labelledby="fplusDropdown">
                                 <a class="dropdown-item" href="index.html">Home</a>
                                 <a class="dropdown-item" href="single-portfolio.html">Single Portfolio</a>
                                 <a class="dropdown-item" href="static-page.html">Static Page</a>
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a class="nav-link" href="#projects">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#clients">Nuestros Clientes</a>
+                            <a class="nav-link" href="#clients">Videos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#news">Recent News</a>
+                            <a class="nav-link" href="#news">Noticias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link" href="#contact">Contacto</a>
                         </li>
                         @can('masters.index')
                         <li class="nav-item">
@@ -273,6 +273,9 @@
                  @foreach ($todos as $todo )
                 
                  <div class="col-12 col-sm-6 col-md-4 single_gallery_item {{ $todo->category->nombre }} wow fadeInUp" data-wow-delay="0.2s">
+                     @if($todo->fotos->count()==0)
+                     {{ "" }}
+                     @else
                     <img src="{{  $todo->fotos->first()->url }}" alt="">
                     <div class="gallery-hover-overlay d-flex justify-content-between">
                         <div class="port-more-view">
@@ -283,6 +286,7 @@
                                 <h3>{!! $todo->descripcion !!}</h3>
                         </div>
                     </div>
+                    @endif
                 </div>
                    @endforeach
                  
@@ -575,10 +579,10 @@
                     <div class="footer-nav-widget">
                         <nav>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Portfolio</a></li>
-                                <li><a href="#">Team</a></li>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#projects">Productos</a></li>
+                                <li><a href="#news">Noticias</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -587,10 +591,13 @@
                     <div class="footer-nav-widget">
                         <nav>
                             <ul>
-                                <li><a href="#">Clients</a></li>
-                                <li><a href="#">Method</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="{{ asset('master.todos') }}">Todos los Productos</a></li>
+                                <li><a href="#clients">Videos</a></li>
+                                <li><a href="#contact">Contacto</a></li>
+                                @can('masters.index')
+                                <li><a href="{{ route('admin') }}">Panel de Control</a></li>
+                                @endcan
+                                
                             </ul>
                         </nav>
                     </div>
@@ -614,7 +621,7 @@
             </div>
             <div class="row pt-5">
                 <div class="col-md-12 text-center text-white"><small><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Ing. Rodrigo Villanueva Nieto (55-40-78-31-88) <i class="" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank"></a> &amp;  <a href="https://themewagon.com" target="_blank"></a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></div>
             </div>
         </div>

@@ -36,7 +36,7 @@
          <li><a href="{{ route('categories.index') }}"><i class="fa fa-eye"></i>Categorías</a></li>
           @endcan
         @can('personas.index')
-        <li><a href="{{ route('personas.index') }}"><i class="fa fa-eye"></i>Personas</a></li>
+        <li><a href="{{ route('personas.index') }}"><i class="fa fa-eye"></i>Noticias</a></li>
         @endcan
       </ul>
     </li>

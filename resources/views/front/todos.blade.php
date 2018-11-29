@@ -126,7 +126,11 @@
 
     <!-- ****** Hero Area Start ****** -->
    @foreach ($header as  $hea)
-   <div class="fplus-hero-area" style="background-image: url({{ $hea->fotos[0]->url }}); height:120px"></div>
+        @if($hea->fotos->count()==0)
+        <div class="fplus-hero-area" style="background-image: url({{ asset('imgfalta/banner.jpg') }}); height:250px"></div>
+        @else
+         <div class="fplus-hero-area" style="background-image: url({{ $hea->fotos[0]->url }}); height:250px; margin:0 0 60px 0"></div>
+        @endif
    @endforeach
    
     <!-- ****** Hero Area End ****** -->
@@ -179,11 +183,9 @@
         <div class="row ">
                 <div class="col-12">
                         <div class="box-header">
-                           
-                            <a href="{{ route('products.pdf') }}" class="btn btn-sm btn-primary pull-right">DESCARGAR PDF</a>
                           <h3 class="box-title">Todos los Productos</h3>
-                          Productos
-                         
+                          <a href="{{ route('products.pdf') }}" class="btn btn-sm btn-primary  pdf">DESCARGAR PDF</a>
+                                                  
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -214,7 +216,11 @@
                                         <td>{!! $producto->category->nombre !!}</td>
                                         <td>{{ $producto->tamano }}</td>
                                         <td>{{ $producto->precio }}</td>
-                                        <td><img style="width:100px" src="{{ $producto->fotos->first()->url }}" alt=""></td>                                        
+                                        @if($producto->fotos->count()==0)
+                                         <td><img style="width:50px" src="{{ asset('imgfalta/sin.png') }}" alt=""></td> 
+                                        @else
+                                        <td><img style="width:50px" src="{{ $producto->fotos->first()->url }}" alt=""></td>
+                                        @endif                                      
                                         <td width="2px">
                                             <a href=" detalle/{{ $producto->id }} " class="btn btn-lg btn-default"><i class="fa fa-eye"></i></a>
                                         </td>

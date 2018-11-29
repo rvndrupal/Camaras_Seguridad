@@ -2,19 +2,19 @@
 
 @section('content')
 <h1>
-        Personas
+       Noticias
         <small>Nueva </small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ route('categories.index') }}"><i class="fa fa-dashboard"></i> Listado de las Personas</a></li>
-        <li class="active">Persona</li>
+        <li><a href="{{ route('categories.index') }}"><i class="fa fa-dashboard"></i> Listado de las Noticias</a></li>
+        <li class="active">Noticias</li>
       </ol>
 <div class="container">
     <div class="row">
         <div class="col-md-12 ">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   Actualizar Persona
+                   Actualizar Noticia
                 </div>
 
                 <div class="panel-body">

@@ -59,3 +59,8 @@
 .b10 {
     margin: -157px 0 0 0;
 }
+
+.pdf {
+    margin: 39px 0 0 576px;
+    position: absolute;
+}
