@@ -291,62 +291,7 @@
     <!-- ****** Gallery Area End ****** -->
 
     <!-- ****** Footer Area Start ****** -->
-    <footer class="fplus-footer-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-3">
-                    <div class="about-us-widget">
-                        <img src="img/core-img/logo.png" alt="">
-                    </div>
-                </div>
-                <div class="col-12 col-md-3">
-                    <div class="footer-nav-widget">
-                        <nav>
-                            <ul>
-                                <li><a href="{{ url('/') }}">Inicio</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Portfolio</a></li>
-                                <li><a href="#">Team</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3">
-                    <div class="footer-nav-widget">
-                        <nav>
-                            <ul>
-                                <li><a href="#">Clients</a></li>
-                                <li><a href="#">Method</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3">
-                    <div class="subscribe-widget">
-                        <p>Subscribe</p>
-                        <form action="#">
-                            <input type="email" name="s-email" id="subscribeEmail" placeholder="Enter your email">
-                            <button type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                    <div class="footer-social-widget">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row pt-5">
-                <div class="col-md-12 text-center text-white"><small><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></div>
-            </div>
-        </div>
-    </footer>
+    @include('front.footer2')
     <!-- Jquery-2.2.4 js -->
     <script src="{{ asset('front/js/jquery/jquery-2.2.4.min.js') }}"></script>
     <!-- Popper js -->
