@@ -48,6 +48,7 @@ class FotoController extends Controller
        
             $foto=$request->file('foto');
             $img=$foto->store('public'); 
+           // $img=$foto->store('posts'); //Cambio de ruta a public
             $url= Storage::url($img);
 
             Foto::create([

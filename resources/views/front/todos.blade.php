@@ -179,14 +179,16 @@
         <div class="row ">
                 <div class="col-12">
                         <div class="box-header">
+                           
+                            <a href="{{ route('products.pdf') }}" class="btn btn-sm btn-primary pull-right">DESCARGAR PDF</a>
                           <h3 class="box-title">Todos los Productos</h3>
                           Productos
                          
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                               
-                          <table id="productos_table" class="table table-bordered table-striped">
+                        <div class="table-responsive">     
+                          <table id="productos_table" class="table  table-bordered table-striped">
                             <thead>
                             <tr>
                               
@@ -225,6 +227,7 @@
                             </tbody>
                             
                           </table>
+                        </div>
                         </div>
                         <!-- /.box-body -->
                       </div>

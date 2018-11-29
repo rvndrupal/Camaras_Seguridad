@@ -106,4 +106,18 @@ class ProductController extends Controller
         $product->delete();
         return back()->with('info','Eliminado Correctamente');
     }
+
+    public function pdf(Request $request, Product $product ){
+        
+        // $nombre=$request->get('nombre');
+ 
+         $productos=Product::with(['category','fotos'])->orderBy('id','DESC')->get();
+         //dd($productos);
+ 
+         $pdf = \PDF::loadView('pdf.productos', compact('productos') );
+         return $pdf->download('productos.pdf');
+         
+         
+        
+     }
 }

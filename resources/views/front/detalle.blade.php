@@ -170,6 +170,7 @@
             <div class="about-us-content">
                 <div class="row no-gutters align-items-center">
                     <div class="col-12 col-md-6">
+                      
                         <div class="about-us-text">
                             @foreach ($producto as  $pro)
                             <h2 style="text-align:center">{{ $pro->nombre }}</h2>

@@ -20,6 +20,10 @@
  Route::get('/todos', 'MasterController@todos')->name('master.todos');
 // //->middleware('permission:masters.index');
 
+//exportar PDF
+Route::get('pdf', 'ProductController@pdf')->name('products.pdf');
+
+
 //panel de administración
 Route::get('/admin', function () {
     return view('admin.panel');
@@ -93,6 +97,8 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('products/{product}/edit', 'ProductController@edit')->name('products.edit')
     ->middleware('permission:products.edit');
+
+   
 
 
     //rutas usuarios    
