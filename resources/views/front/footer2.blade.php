@@ -36,8 +36,9 @@
                 <div class="col-12 col-md-3">
                     <div class="subscribe-widget">
                         <p>Subscribe</p>
-                        <form action="#">
-                            <input type="email" name="s-email" id="subscribeEmail" placeholder="Enter your email">
+                        <form action="/subscribe" method="POST">
+                            {!! csrf_field() !!}
+                            <input type="email" name="email" id="subscribeEmail" placeholder="Ingresa tu Email">
                             <button type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                         </form>
                     </div>

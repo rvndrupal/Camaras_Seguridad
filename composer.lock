@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d64c445ffeba3a526e4ed30432d4670",
+    "content-hash": "349074339a4d85420e316a12a6399e72",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -1170,6 +1170,57 @@
             "time": "2018-10-10T09:24:14+00:00"
         },
         {
+            "name": "nztim/mailchimp",
+            "version": "v3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nztim/mailchimp.git",
+                "reference": "50fba72454afab7f0ccc84cce28b4d74d4506fc6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nztim/mailchimp/zipball/50fba72454afab7f0ccc84cce28b4d74d4506fc6",
+                "reference": "50fba72454afab7f0ccc84cce28b4d74d4506fc6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0",
+                "rmccue/requests": "^1.7"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "^6.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "NZTim\\Mailchimp\\MailchimpServiceProvider"
+                    ],
+                    "aliases": {
+                        "Mailchimp": "NZTim\\Mailchimp\\MailchimpFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NZTim\\Mailchimp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim",
+                    "email": "tim@nztim.com"
+                }
+            ],
+            "description": "Mailchimp API wrapper, includes Laravel 5 support.",
+            "time": "2018-11-22T18:07:43+00:00"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v9.99.99",
             "source": {
@@ -1590,6 +1641,55 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "rmccue/requests",
+            "version": "v1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rmccue/Requests.git",
+                "reference": "87932f52ffad70504d93f04f15690cf16a089546"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rmccue/Requests/zipball/87932f52ffad70504d93f04f15690cf16a089546",
+                "reference": "87932f52ffad70504d93f04f15690cf16a089546",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "requests/test-server": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Requests": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan McCue",
+                    "homepage": "http://ryanmccue.info"
+                }
+            ],
+            "description": "A HTTP library written in PHP, for human beings.",
+            "homepage": "http://github.com/rmccue/Requests",
+            "keywords": [
+                "curl",
+                "fsockopen",
+                "http",
+                "idna",
+                "ipv6",
+                "iri",
+                "sockets"
+            ],
+            "time": "2016-10-13T00:11:37+00:00"
         },
         {
             "name": "sabberworm/php-css-parser",

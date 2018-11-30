@@ -36,11 +36,14 @@
                 <div class="col-12 col-md-3">
                     <div class="subscribe-widget">
                         <p>Subscribe</p>
-                        <form action="#">
-                            <input type="email" name="s-email" id="subscribeEmail" placeholder="Enter your email">
+                        <form action="/subscribete" method="POST">
+                            {!! csrf_field() !!}
+                            <input type="email" name="email" id="subscribeEmail" placeholder="Ingresa tu Email">
                             <button type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                         </form>
                     </div>
+
+
                     <div class="footer-social-widget">
                         <a href="#" title="Compartir en Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>

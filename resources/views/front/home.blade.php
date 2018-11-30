@@ -43,6 +43,8 @@
         <img src="{{ asset('front/img/core-img/h-logo.png') }}" alt="logo">
     </div>
 
+ 
+
     <!-- ****** Header Area Start ****** -->
     <header class="header_area">
         <div class="container">
@@ -130,6 +132,26 @@
                 @foreach ($masters as $master )
                 <h2 class="titulo">{{ $master->titulo }}</h2>
                  @endforeach  
+
+                {{-- Subscripción notificación --}}
+                @if(session('info'))
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8 ">
+                            <div class="alert alert-success">
+                                {{ session('info') }}
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+            
+              @endif
+
+                {{-- notificación --}}
+
+
+
                 @can('masters.update')                        
                 <button type="button" class="btn btn-primary btn-editar">Actualizar</button>
                
@@ -567,6 +589,7 @@
     <!-- ****** Contact Area End ****** -->
 
     <!-- ****** Footer Area Start ****** -->
+   
     @include('front.footer')
     <!-- ****** Footer Area End ****** -->
 
