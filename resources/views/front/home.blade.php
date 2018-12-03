@@ -585,7 +585,13 @@
             </div>
         </div>
         <!-- Google Maps -->
-        <div id="googleMap" class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"></div>
+        {{--  <div id="googleMap" class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"></div>  --}}
+        <div class="row maps wow fadeInDown" data-wow-delay="2.3s"">
+            <div class="col-md-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1880.9418472132345!2d-99.07922796612338!3d19.460580685662467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fbf49223df07%3A0x3d8b2c76d4ab20f0!2sBosque+de+San+Juan+de+Arag%C3%B3n!5e0!3m2!1ses!2smx!4v1543879210398" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+        
     </section>
     <!-- ****** Contact Area End ****** -->
 

@@ -38,7 +38,7 @@ class EmailController extends Controller
                 false    //que el usuario confirme su email
             );  
         
-            return redirect()->route('master.index')->with('info','Gracias Ya estas suscrito con exito');
+            return redirect()->route('master.index')->with('info','Gracias - Suscrito con exito -');
         
     }
 
