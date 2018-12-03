@@ -63,53 +63,7 @@
     <!-- ****** Header Area End ****** -->
 
     <!-- ****** Menu Area Start ****** -->
-    <div class="fplus-menu-area">
-        <!-- Menu -->
-        <div class="fplus-main-menu h-100 d-flex align-items-center">
-            <nav class="navbar navbar-expand-lg">
-                <div class="" id="fplus-nav">
-                    <ul class="navbar-nav" id="fplusNav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('master.index') }}">Inicio <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About Us</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="fplusDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                            <div class="dropdown-menu" aria-labelledby="fplusDropdown">
-                                <a class="dropdown-item" href="/">Inicio</a>
-                                <a class="dropdown-item" href="single-portfolio.html">Single Portfolio</a>
-                                <a class="dropdown-item" href="static-page.html">Static Page</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#clients">Our Clients</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#news">Recent News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!-- Header Social Icon -->
-        <div class="header-social-info d-flex align-items-center justify-content-end">
-            <div class="h-social-icon">
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-            </div>
-        </div>
-    </div>
+    @include('front.menu')
     <!-- ****** Menu Area End ****** -->
 
     <!-- ****** Hero Area Start ****** -->
