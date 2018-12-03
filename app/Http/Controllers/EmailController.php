@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use NZTim\Mailchimp\Mailchimp;
 use Mailchimp;
+use Mail;
+use Session;
+use Redirect;
+
 // use Mailchimp_Error;
 // use Mailchimp_List_AlreadySubscribed;
 use Spatie\Newsletter\NewsletterFacade as Newsletter;
@@ -19,6 +23,7 @@ class EmailController extends Controller
 
         $listId='1cea104e24';
         $email= request()->input('email');
+        $titulo=request()->input('titulo');
         
         
             if(Mailchimp::check($listId, $email))
@@ -29,11 +34,22 @@ class EmailController extends Controller
             Mailchimp::subscribe(
                 $listId, //list id
                 $email, //email
-                [],     //campos extra
+                [],  //campos extra
                 false    //que el usuario confirme su email
             );  
         
             return redirect()->route('master.index')->with('info','Gracias Ya estas suscrito con exito');
         
+    }
+
+    public function store(Request $request)
+    {
+        Mail::send('emails.contact',$request->all(), function($msj){
+            $msj->subject('Seguridad.com.mx');
+            $msj->to('rodrigodrupal5@gmail.com');  //destino del cliente
+
+        });
+
+        return redirect()->route('master.index')->with('info','Correo  envíado Correctamente.');
     }
 }

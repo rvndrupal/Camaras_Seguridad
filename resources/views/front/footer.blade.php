@@ -38,6 +38,7 @@
                         <p>Subscribe</p>
                         <form action="/subscribete" method="POST">
                             {!! csrf_field() !!}
+                           
                             <input type="email" name="email" id="subscribeEmail" placeholder="Ingresa tu Email">
                             <button type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                         </form>

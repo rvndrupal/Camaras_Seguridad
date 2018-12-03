@@ -24,31 +24,9 @@
 Route::get('pdf', 'ProductController@pdf')->name('products.pdf');
 
 //mailchip
-// Route::post('/subscribe', function(){
-//     //enviar emailchip
-//     //instalar paquete   composer nztim/mailchimp
-
-
-//     $listId='1cea104e24';
-//     $email= request()->input('email');
-
-
-//     if(Mailchimp::check($listId, $email))
-//     {
-//         return "EL email {$email} ya se ha registrado";
-//     }  //verificamos el email de la lista
-
-//     Mailchimp::subscribe(
-//         $listId, //list id
-//         $email, //email
-//         [],     //campos extra
-//         false    //que el usuario confirme su email
-//     );  
-
-//     return  'listo';
-// });
-
 Route::post('subscribete', 'EmailController@email')->name('email.newsletter');
+//gmail 
+Route::post('mail', 'EmailController@store')->name('mail.store');
 
 
 

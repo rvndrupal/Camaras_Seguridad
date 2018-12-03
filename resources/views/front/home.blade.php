@@ -536,7 +536,8 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10">
                         <div class="contact_from wow fadeInDown" data-wow-delay="1.5s">
-                            <form action="mail.php" method="post" id="main_contact_form">
+                            <form action="mail" method="POST" >
+                                    {!! csrf_field() !!}
                                 <!-- Message Input Area Start -->
                                 <div class="contact_input_area">
                                     <div id="success_fail_info"></div>
@@ -544,7 +545,7 @@
                                         <!-- Single Input Area Start -->
                                         <div class="col-12 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Nombre" required>
                                             </div>
                                         </div>
                                         <!-- Single Input Area Start -->
@@ -556,24 +557,24 @@
                                         <!-- Single Input Area Start -->
                                         <div class="col-12 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Título" required>
                                             </div>
                                         </div>
                                         <!-- Single Input Area Start -->
                                         <div class="col-12 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="number" id="number" placeholder="Telephone" required>
+                                                <input type="text" class="form-control" name="number" id="number" placeholder="Cel" required>
                                             </div>
                                         </div>
                                         <!-- Single Input Area Start -->
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+                                                <textarea name="mensaje" class="form-control"  cols="30" rows="10" placeholder="Mensaje" required></textarea>
                                             </div>
                                         </div>
                                         <!-- Single Input Area Start -->
                                         <div class="col-12 text-center">
-                                            <button type="submit" class="btn">Send Message</button>
+                                            <button type="submit" class="btn">Enviar</button>
                                         </div>
                                     </div>
                                 </div>
