@@ -46,7 +46,7 @@ class EmailController extends Controller
     {
         Mail::send('emails.contact',$request->all(), function($msj){
             $msj->subject('Seguridad.com.mx');
-            $msj->to('rodrigodrupal5@gmail.com');  //destino del cliente
+            $msj->to('rodrigodrupal1@gmail.com');  //destino del cliente
 
         });
 
